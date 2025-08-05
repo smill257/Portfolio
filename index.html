@@ -89,8 +89,8 @@
     .project-flex {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
       align-items: flex-start;
+      gap: 1.5rem;
     }
 
     .project-text {
@@ -100,12 +100,14 @@
 
     .project-image {
       flex: 1;
-      min-width: 220px;
+      min-width: 180px;
+      max-width: 250px;
       text-align: center;
     }
 
     .project-image img {
-      max-width: 100%;
+      width: 100%;
+      height: auto;
       border-radius: 8px;
       border: 1px solid #ccc;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -113,7 +115,7 @@
     }
 
     .img-caption {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #666;
       text-align: center;
       margin-bottom: 1rem;
@@ -166,6 +168,7 @@
       }
     }
   </style>
+</head>
   <script>
     // Prevent floating card from overlapping header
     window.addEventListener('scroll', () => {
@@ -199,6 +202,7 @@
 
 <!-- 💬 Floating Contact Card -->
 <div class="floating-contact">
+
   <h4>Contact Me</h4>
   <a href="mailto:SJ.Miller2k@gmail.com">📧 Email</a>
   <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank">🔗 LinkedIn</a>
