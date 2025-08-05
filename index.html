@@ -86,39 +86,22 @@
       text-decoration: underline;
     }
 
-    .project-flex {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 1.5rem;
-    }
-
-    .project-text {
-      flex: 2;
-      min-width: 240px;
-    }
-
-    .project-image {
-      flex: 1;
-      min-width: 180px;
-      max-width: 250px;
-      text-align: center;
-    }
-
-    .project-image img {
-      width: 100%;
-      height: auto;
+    .float-image-right {
+      float: right;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      max-width: 200px;
       border-radius: 8px;
       border: 1px solid #ccc;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-bottom: 0.5rem;
     }
 
     .img-caption {
       font-size: 0.85rem;
       color: #666;
-      text-align: center;
-      margin-bottom: 1rem;
+      text-align: left;
+      clear: both;
+      margin-top: 0.5rem;
     }
 
     .floating-contact {
@@ -166,9 +149,14 @@
       .floating-contact {
         display: none;
       }
+
+      .float-image-right {
+        float: none;
+        display: block;
+        margin: 1rem auto;
+      }
     }
   </style>
-</head>
   <script>
     // Prevent floating card from overlapping header
     window.addEventListener('scroll', () => {
@@ -200,9 +188,7 @@
   <a href="#experience">Experience</a>
 </nav>
 
-<!-- 💬 Floating Contact Card -->
 <div class="floating-contact">
-
   <h4>Contact Me</h4>
   <a href="mailto:SJ.Miller2k@gmail.com">📧 Email</a>
   <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank">🔗 LinkedIn</a>
@@ -227,22 +213,18 @@
 
   <div class="project">
     <h3>AWS Cloud Security Architecture</h3>
-    <div class="diagram-container">
-      <img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" alt="AWS Architecture Diagram" />
-      <p class="img-caption">Diagram: Visual overview of the two-AZ AWS deployment.</p>
-    </div>
+    <img class="float-image-right" src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" alt="AWS Architecture Diagram">
     <p>Designed and implemented a secure multi-AZ cloud environment using AWS services, including IAM, S3 encryption, CloudWatch monitoring, and disaster recovery strategies for a fictional auto firm. Emphasized fault tolerance, encryption at rest, access control, and real-time alerting.</p>
+    <p class="img-caption">Diagram: Visual overview of the two-AZ AWS deployment.</p>
   </div>
 
   <div class="project">
     <h3>Smart VIN Decoder</h3>
-    <div class="diagram-container">
-      <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png" alt="VIN Decoder UI Screenshot" />
-      <p class="img-caption">Screenshot: Smart VIN Decoder interface built with Python.</p>
-      <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" alt="VIN Decoder Output Screenshot" />
-      <p class="img-caption">Screenshot: Decoded vehicle information displayed from NHTSA API.</p>
-    </div>
+    <img class="float-image-right" src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png" alt="VIN Decoder UI Screenshot">
     <p>Developed a VIN decoder in Python that queries the NHTSA API to return vehicle make, model, and year. Includes error handling, history tracking, and efficient local caching to avoid redundant API calls.</p>
+    <p class="img-caption">Screenshot: Smart VIN Decoder interface built with Python.</p>
+    <img class="float-image-right" src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" alt="VIN Decoder Output Screenshot">
+    <p class="img-caption">Screenshot: Decoded vehicle information displayed from NHTSA API.</p>
   </div>
 
   <div class="project">
@@ -284,5 +266,3 @@
 
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
