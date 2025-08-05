@@ -103,16 +103,6 @@
       font-size: 1rem;
     }
 
-    .contact a {
-      color: #4a148c;
-      text-decoration: none;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
-      color: #6a1b9a;
-    }
-
     .resume-link a {
       background: #4a148c;
       color: white;
@@ -146,7 +136,7 @@
 
     .floating-contact {
       position: fixed;
-      top: 100px;
+      top: 180px; /* ensures it's under the header */
       left: 20px;
       width: 220px;
       background: #fefefe;
@@ -155,13 +145,7 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 1rem;
       font-size: 0.95rem;
-      z-index: 900;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    .floating-contact.visible {
+      z-index: 99;
       opacity: 1;
       pointer-events: auto;
     }
@@ -192,12 +176,8 @@
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Sam Miller's portfolio showcasing skills in Information Security, Cybersecurity, and Assurance.">
-  <meta name="keywords" content="Sam Miller, Cybersecurity, Information Security, Portfolio, Kennesaw State University">
-  <meta name="author" content="Sam Miller">
 </head>
 <body>
-
 
 <header>
   <h1>Sam Miller</h1>
@@ -208,7 +188,6 @@
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
   <a href="#experience">Experience</a>
-  <a href="#contact">Contact</a>
 </nav>
 
 <!-- 💬 Floating Contact Card -->
@@ -220,77 +199,20 @@
   <a href="https://github.com/smill257/Portfolio/raw/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" download>📄 Resume</a>
 </div>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>I am a passionate Information Security & Assurance student at Kennesaw State University. Through my academic journey, I've immersed myself in network security, ethical hacking, risk management, and compliance, all while maintaining an honors GPA and receiving academic recognition on the President's and Dean's Lists.</p>
-  <p><strong>Certifications:</strong> Python Bootcamp (Udemy), Cybersecurity (Cisco Networking Academy), Intro to Cloud Security (Simplilearn), CompTIA Security+ (In Progress)</p>
-  <p><strong>Skills:</strong> Python, Java, C++, HTML, SQL, Power BI, Tableau, Excel, Wireshark, Linux, AWS, Azure, Risk Assessment, Public Speaking, Leadership</p>
-</section>
-
 <section id="projects">
   <h2>Projects</h2>
-  <div class="project">
-    <h3>Custom Encryption/Decryption Tool</h3>
-    <p>Developed a Python-based tool to decode hex-encoded messages using bitwise operations and generate SHA-256 hashes. Demonstrated secure data processing and cryptographic techniques.</p>
-  </div>
-<div class="project">
-  <h3>AWS Cloud Security Architecture</h3>
-  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
-    <div style="flex: 1.5; min-width: 250px;">
-      <p>
-        Designed and implemented a secure multi-AZ cloud environment using AWS services, including IAM, S3 encryption, CloudWatch monitoring, and disaster recovery strategies for a fictional auto firm. 
-        The architecture emphasizes fault tolerance, encryption at rest, access control, and real-time alerting.
-      </p>
-      <p style="font-size: 0.9rem; color: #aaa;">
-        <em>Diagram: Visual overview of the two-AZ AWS deployment.</em>
-      </p>
-    </div>
-    <div style="flex: 1; min-width: 220px;">
-      <img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png"
-           alt="AWS Network Diagram"
-           style="width: 100%; border-radius: 8px; border: 1px solid #444;" />
-    </div>
-  </div>
-</div>
-
-
-<div class="project">
-  <h3>Smart VIN Decoder</h3>
-  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
-    <div style="flex: 2; min-width: 250px;">
-      <p>
-        Developed a VIN decoder in Python that queries the NHTSA API to return vehicle make, model, and year. Includes error handling, history tracking, and user prompts for deletion and confirmation. Designed with efficient code logic and user experience in mind.
-      </p>
-      <p>
-        Cached VIN results locally to avoid redundant API calls and allow for revisiting previously decoded vehicles. This project demonstrates real-world application of APIs, JSON parsing, and conditional programming.
-      </p>
-    </div>
-    <div style="flex: 1; min-width: 240px;">
-      <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png"
-           alt="VIN Decoder Interface Screenshot"
-           style="width: 100%; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 1rem;" />
-      <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png"
-           alt="VIN Decoder Output Screenshot"
-           style="width: 100%; border-radius: 8px; border: 1px solid #ccc;" />
-    </div>
-  </div>
-</div>
+  <!-- ... other projects ... -->
 
   <div class="project">
-    <h3>IT Audit Risk Analysis</h3>
-    <p>Conducted SOX-aligned IT risk assessment, identified control weaknesses, and developed mitigation plans during an IT audit simulation for a fictional company.</p>
+    <h3 style="color: #1a73e8;">Additional Projects</h3>
+    <ul class="project-list" style="list-style: disc; padding-left: 1.5rem;">
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank">Array Creator and Sorter (Java)</a></li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank">Calculator (Java)</a></li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four%20Game.java" target="_blank">Connect Four Game (Java)</a></li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Hash-Decrypter-Project.py" target="_blank">Hash Decrypter (Python)</a></li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Password%20Integrity.py" target="_blank">Password Integrity Validator (Python)</a></li>
+    </ul>
   </div>
-  <div class="project">
-<div class="project" style="background: #e6f7f1;">
-  <h3 style="color: #1a73e8;">Additional Projects</h3>
-  <ul class="project-list" style="list-style: disc; padding-left: 1.5rem;">
-    <li><a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank">Array Creator and Sorter (Java)</a></li>
-    <li><a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank">Calculator (Java)</a></li>
-    <li><a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four%20Game.java" target="_blank">Connect Four Game (Java)</a></li>
-    <li><a href="https://github.com/smill257/Course-Projects/blob/main/Hash-Decrypter-Project.py" target="_blank">Hash Decrypter (Python)</a></li>
-    <li><a href="https://github.com/smill257/Course-Projects/blob/main/Password%20Integrity.py" target="_blank">Password Integrity Validator (Python)</a></li>
-  </ul>
-</div>
 </section>
 
 <section id="experience">
