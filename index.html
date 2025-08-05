@@ -1,192 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sam Miller | Cybersecurity & InfoSec</title>
-<style>
-  body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #121212;
-    color: #e0e0e0;
-    line-height: 1.8;
-  }
-
-  header {
-    background: #000;
-    color: #00bfa5;
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-
-  header h1 {
-    font-size: 3rem;
-  }
-
-  header p {
-    font-size: 1.2rem;
-    font-weight: lighter;
-    color: #c0c0c0;
-  }
-
-  nav {
-    background: #1a1a1a;
-    text-align: center;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  nav a {
-    color: #e0e0e0;
-    margin: 0 2rem;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    padding: 0.5rem;
-  }
-
-  nav a:hover {
-    color: #00bfa5;
-    background-color: #222;
-    border-radius: 4px;
-    text-decoration: underline;
-  }
-
-  section {
-    padding: 3rem 2rem;
-    max-width: 900px;
-    margin: auto;
-    background: #1f1f1f;
-    border-radius: 8px;
-  }
-
-  h2 {
-    font-size: 2.2rem;
-    color: #1a73e8;
-    border-bottom: 2px solid #333;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .project, .experience {
-    background: #2c2c2c;
-    border-radius: 8px;
-    padding: 1.2rem 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    margin-bottom: 2rem;
-  }
-
-  .project h3 {
-    color: #1a73e8;
-    margin-bottom: 0.5rem;
-  }
-
-  .project a, .experience a {
-    color: #00bfa5;
-    text-decoration: none;
-  }
-
-  .project a:hover, .experience a:hover {
-    color: #1a73e8;
-    text-decoration: underline;
-  }
-
-  footer {
-    background: #000;
-    color: #777;
-    text-align: center;
-    padding: 2rem;
-    font-size: 1rem;
-  }
-
-  .contact a {
-    color: #00bfa5;
-    text-decoration: none;
-  }
-
-  .contact a:hover {
-    text-decoration: underline;
-    color: #1a73e8;
-  }
-
-  .resume-link a {
-    background: #1a73e8;
-    color: white;
-    padding: 0.6rem 1rem;
-    border-radius: 6px;
-    display: inline-block;
-    margin-top: 1rem;
-    text-decoration: none;
-  }
-
-  .resume-link a:hover {
-    background: #0f5ecb;
-  }
-
-  .diagram-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1.5rem;
-  }
-
-  .diagram-container img {
-    flex: 1 1 350px;
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    border: 1px solid #444;
-  }
-
-  .floating-contact {
-    position: fixed;
-    top: calc(4rem + 1rem + 70px);
-    left: 20px;
-    width: 220px;
-    background: #2a2a2a;
-    border: 1px solid #444;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    padding: 1rem;
-    font-size: 0.95rem;
-    z-index: 900;
-  }
-
-  .floating-contact h4 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #e0e0e0;
-  }
-
-  .floating-contact a {
-    display: block;
-    color: #1a73e8;
-    text-decoration: none;
-    margin-bottom: 0.5rem;
-  }
-
-  .floating-contact a:hover {
-    color: #00bfa5;
-    text-decoration: underline;
-  }
-
-  @media only screen and (max-width: 768px) {
-    .floating-contact {
-      display: none;
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #2c2c2c;
+      line-height: 1.8;
     }
-  }
-</style>
+
+    header {
+      background: #f5f5f5;
+      color: #6a1b9a;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: lighter;
+      color: #555;
+    }
+
+    nav {
+      background: #eeeeee;
+      text-align: center;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #333;
+      margin: 0 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+    }
+
+    nav a:hover {
+      color: #ab47bc;
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      color: #6a1b9a;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project, .experience {
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 1.2rem 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    .project h3 {
+      color: #6a1b9a;
+      margin-bottom: 0.5rem;
+    }
+
+    .project a, .experience a {
+      color: #6a1b9a;
+      text-decoration: none;
+    }
+
+    .project a:hover, .experience a:hover {
+      color: #ab47bc;
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #f5f5f5;
+      color: #777;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+    }
+
+    .resume-link a {
+      background: #6a1b9a;
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+    }
+
+    .resume-link a:hover {
+      background: #ab47bc;
+    }
+
+    .diagram-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .diagram-container img {
+      flex: 1 1 350px;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ccc;
+    }
+
+    .floating-contact {
+      position: fixed;
+      top: 180px;
+      left: 20px;
+      width: 220px;
+      background: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      font-size: 0.95rem;
+      z-index: 99;
+    }
+
+    .floating-contact h4 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: #2c2c2c;
+    }
+
+    .floating-contact a {
+      display: block;
+      color: #6a1b9a;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+    }
+
+    .floating-contact a:hover {
+      color: #ab47bc;
+      text-decoration: underline;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .floating-contact {
+        display: none;
+      }
+    }
+  </style>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Sam Miller's portfolio showcasing skills in Information Security, Cybersecurity, and Assurance.">
-  <meta name="keywords" content="Sam Miller, Cybersecurity, Information Security, Portfolio, Kennesaw State University">
-  <meta name="author" content="Sam Miller">
 </head>
 <body>
 
@@ -219,6 +206,7 @@
 
 <section id="projects">
   <h2>Projects</h2>
+
   <div class="project">
     <h3>Custom Encryption/Decryption Tool</h3>
     <p>Developed a Python-based tool to decode hex-encoded messages using bitwise operations and generate SHA-256 hashes. Demonstrated secure data processing and cryptographic techniques.</p>
@@ -226,42 +214,27 @@
 
   <div class="project">
     <h3>AWS Cloud Security Architecture</h3>
-    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+    <div class="diagram-container">
       <div style="flex: 1.5; min-width: 250px;">
-        <p>
-          Designed and implemented a secure multi-AZ cloud environment using AWS services, including IAM, S3 encryption, CloudWatch monitoring, and disaster recovery strategies for a fictional auto firm. 
-          The architecture emphasizes fault tolerance, encryption at rest, access control, and real-time alerting.
-        </p>
-        <p style="font-size: 0.9rem; color: #aaa;">
-          <em>Diagram: Visual overview of the two-AZ AWS deployment.</em>
-        </p>
+        <p>Designed and implemented a secure multi-AZ cloud environment using AWS services, including IAM, S3 encryption, CloudWatch monitoring, and disaster recovery strategies for a fictional auto firm. The architecture emphasizes fault tolerance, encryption at rest, access control, and real-time alerting.</p>
+        <p style="font-size: 0.9rem; color: #777;"><em>Diagram: Visual overview of the two-AZ AWS deployment.</em></p>
       </div>
       <div style="flex: 1; min-width: 220px;">
-        <img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png"
-             alt="AWS Network Diagram"
-             style="width: 100%; border-radius: 8px; border: 1px solid #444;" />
+        <img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" alt="AWS Network Diagram" />
       </div>
     </div>
   </div>
 
   <div class="project">
     <h3>Smart VIN Decoder</h3>
-    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+    <div class="diagram-container">
       <div style="flex: 2; min-width: 250px;">
-        <p>
-          Developed a VIN decoder in Python that queries the NHTSA API to return vehicle make, model, and year. Includes error handling, history tracking, and user prompts for deletion and confirmation. Designed with efficient code logic and user experience in mind.
-        </p>
-        <p>
-          Cached VIN results locally to avoid redundant API calls and allow for revisiting previously decoded vehicles. This project demonstrates real-world application of APIs, JSON parsing, and conditional programming.
-        </p>
+        <p>Developed a VIN decoder in Python that queries the NHTSA API to return vehicle make, model, and year. Includes error handling, history tracking, and user prompts for deletion and confirmation.</p>
+        <p>Cached VIN results locally to avoid redundant API calls. Demonstrates real-world application of APIs, JSON parsing, and conditional programming.</p>
       </div>
       <div style="flex: 1; min-width: 240px;">
-        <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png"
-             alt="VIN Decoder Interface Screenshot"
-             style="width: 100%; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 1rem;" />
-        <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png"
-             alt="VIN Decoder Output Screenshot"
-             style="width: 100%; border-radius: 8px; border: 1px solid #ccc;" />
+        <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png" alt="VIN Decoder UI" style="margin-bottom: 1rem;" />
+        <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" alt="VIN Decoder Output" />
       </div>
     </div>
   </div>
@@ -272,7 +245,7 @@
   </div>
 
   <div class="project">
-    <h3 style="color: #1a73e8;">Additional Projects</h3>
+    <h3>Additional Projects</h3>
     <ul class="project-list" style="list-style: disc; padding-left: 1.5rem;">
       <li><a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank">Array Creator and Sorter (Java)</a></li>
       <li><a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank">Calculator (Java)</a></li>
@@ -285,14 +258,17 @@
 
 <section id="experience">
   <h2>Experience & Involvement</h2>
+
   <div class="experience">
     <h3>Upsilon Pi Epsilon (UPE)</h3>
     <p>Member of the international computing honor society, recognized for academic excellence.</p>
   </div>
+
   <div class="experience">
     <h3>Business Technology Association (BTA)</h3>
     <p>Active member collaborating on the intersection of business and emerging technologies, with a focus on data analytics and cybersecurity.</p>
   </div>
+
   <div class="experience">
     <h3>National Honor Society (NHS)</h3>
     <p>Maintains high academic standing and contributes to service-based leadership initiatives.</p>
