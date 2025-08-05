@@ -5,20 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sam Miller | Cybersecurity & InfoSec</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #ffffff; color: #333; line-height: 1.6; }
-    header { background: #1a1a1a; color: #fff; padding: 3rem 1rem; text-align: center; }
-    nav { background: #333; text-align: center; padding: 1rem 0; }
-    nav a { color: #f5f5f5; margin: 0 1rem; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 2rem; max-width: 900px; margin: auto; }
-    h2 { color: #1a1a1a; border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5rem; margin-bottom: 1rem; }
-    .project, .experience { margin-bottom: 2rem; }
-    footer { background: #1a1a1a; color: white; text-align: center; padding: 1.5rem 0; font-size: 0.9rem; }
-    .contact a { color: #000000; text-decoration: none; }
-    .contact a:hover { text-decoration: underline; }
-    .resume-link { margin-top: 1rem; display: block; }
-    .project a { display: inline-block; margin-top: 0.5rem; color: #1a73e8; text-decoration: none; }
-    .project a:hover { text-decoration: underline; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.8;
+    }
+    header {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-weight: lighter;
+    }
+    nav {
+      background: #333;
+      text-align: center;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: #f5f5f5;
+      margin: 0 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+    }
+    nav a:hover {
+      color: #1a73e8;
+      text-decoration: underline;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    h2 {
+      font-size: 2.2rem;
+      color: #1a1a1a;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .project, .experience {
+      margin-bottom: 2.5rem;
+    }
+    .project a, .experience a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    .project a:hover, .experience a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+    }
+    .contact a {
+      color: #000000;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
+    .resume-link {
+      margin-top: 1rem;
+      display: block;
+    }
+    @media only screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav a {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -37,12 +115,9 @@
 
 <section id="about">
   <h2>About Me</h2>
-  <p>Information Security & Assurance Student at KSU who is embarking on the dynamic and highly relevant field of study. Throughout my academic journey, I've pursued various aspects of information security, such as network security, ethical hacking, risk management, and compliance. At the same time, maintaining an honors GPA and achieving academic awards such as the president's and dean's lists.</p>
-  
+  <p>I am a passionate Information Security & Assurance student at Kennesaw State University. Through my academic journey, I've immersed myself in network security, ethical hacking, risk management, and compliance, all while maintaining an honors GPA and receiving academic recognition on the President's and Dean's Lists.</p>
   <p><strong>Certifications:</strong> Python Bootcamp (Udemy), Cybersecurity (Cisco Networking Academy), Intro to Cloud Security (Simplilearn), CompTIA Security+ (In Progress)</p>
-  
   <p><strong>Skills:</strong> Python, Java, C++, HTML, SQL, Power BI, Tableau, Excel, Wireshark, Linux, AWS, Azure, Risk Assessment, Public Speaking, Leadership</p>
- 
 </section>
 
 <section id="projects">
@@ -59,43 +134,17 @@
     <h3>IT Audit Risk Analysis</h3>
     <p>Conducted SOX-aligned IT risk assessment, identified control weaknesses, and developed mitigation plans during an IT audit simulation for a fictional company.</p>
   </div>
- <div class="project">
+  <div class="project">
     <h3>Additional Projects</h3>
     <ul class="project-list">
-      <li>
-        <a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank">Array Creator and Sorter (Java)</a>
-        <ul>
-          <li>Creates an array from user input and sorts it using a custom sorting algorithm.</li>
-        </ul>
-      </li>
-      <li>
-        <a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank">Calculator (Java)</a>
-        <ul>
-          <li>Command-line calculator supporting basic arithmetic operations like addition, subtraction, etc.</li>
-        </ul>
-      </li>
-      <li>
-        <a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four%20Game.java" target="_blank">Connect Four Game (Java)</a>
-        <ul>
-          <li>Two-player Connect Four game with user interface and win-detection logic.</li>
-        </ul>
-      </li>
-      <li>
-        <a href="https://github.com/smill257/Course-Projects/blob/main/Hash-Decrypter-Project.py" target="_blank">Hash Decrypter (Python)</a>
-        <ul>
-          <li>Attempts to reverse known hash values by comparing against common wordlists.</li>
-        </ul>
-      </li>
-      <li>
-        <a href="https://github.com/smill257/Course-Projects/blob/main/Password%20Integrity.py" target="_blank">Password Integrity Validator (Python)</a>
-        <ul>
-          <li>Validates password strength and checks against known weak patterns and best practices.</li>
-        </ul>
-      </li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank">Array Creator and Sorter (Java)</a></li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank">Calculator (Java)</a></li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four%20Game.java" target="_blank">Connect Four Game (Java)</a></li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Hash-Decrypter-Project.py" target="_blank">Hash Decrypter (Python)</a></li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Password%20Integrity.py" target="_blank">Password Integrity Validator (Python)</a></li>
     </ul>
   </div>
 </section>
-
 
 <section id="experience">
   <h2>Experience & Involvement</h2>
