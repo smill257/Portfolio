@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sam Miller | Cybersecurity & InfoSec</title>
   <style>
     body {
@@ -32,7 +32,7 @@
       padding: 1rem 0;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
     }
     nav a {
       color: #f5f5f5;
@@ -78,60 +78,84 @@
       padding: 2rem;
       font-size: 1rem;
     }
-    .floating-contact {
-      position: fixed;
-      top: 380px;
-      left: 20px;
-      width: 220px;
-      background: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      padding: 1rem;
-      font-size: 0.95rem;
-      z-index: 800;
-    }
-    .floating-contact h4 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-      color: #1a1a1a;
-    }
-    .floating-contact a {
-      display: block;
-      color: #1a73e8;
+    .contact a {
+      color: #000000;
       text-decoration: none;
-      margin-bottom: 0.5rem;
     }
-    .floating-contact a:hover {
+    .contact a:hover {
       text-decoration: underline;
     }
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.8);
-    }
-    .lightbox-content {
-      margin: auto;
-      display: block;
-      width: 80%;
-      max-width: 900px;
-    }
-    .lightbox:target {
+    .resume-link {
+      margin-top: 1rem;
       display: block;
     }
-    @media only screen and (max-width: 768px) {
-      .floating-contact {
-        display: none;
-      }
+
+    /* Zoom effect */
+    .zoom-image {
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
     }
+    .zoom-image:hover {
+      transform: scale(1.03);
+    }
+
+    /* Side-by-side layout for diagram */
+    .diagram-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .diagram-container img {
+      flex: 1 1 350px;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: 1px solid #ccc;
+    }
+    .diagram-description {
+      flex: 1 1 300px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+ /* Floating Contact Card (Left-Side, Below Header & Nav) */
+.floating-contact {
+  position: fixed;
+  top: calc(4rem + 1rem + 70px); /* header padding + nav height + spacing */
+  left: 20px;
+  width: 220px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  font-size: 0.95rem;
+  z-index: 900;
+}
+.floating-contact h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+.floating-contact a {
+  display: block;
+  color: #1a73e8;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+.floating-contact a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .floating-contact {
+    display: none;
+  }
+}
   </style>
 </head>
 <body>
@@ -148,53 +172,7 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project">
-    <h3>AWS Cloud Security Architecture</h3>
-    <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
-      <div style="flex: 2; min-width: 250px;">
-        <p>
-          Designed and implemented a secure multi-AZ cloud environment using AWS services, including IAM, S3 encryption, CloudWatch monitoring, and disaster recovery strategies for a fictional auto firm. The architecture emphasizes fault tolerance, encryption at rest, access control, and real-time alerting.
-        </p>
-        <p style="font-size: 0.9rem; color: #555;">
-          <em>Click image to enlarge:</em>
-        </p>
-      </div>
-      <div style="flex: 1; min-width: 250px;">
-        <a href="#lightbox"><img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" alt="AWS Network Diagram" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 1px solid #ccc; cursor: zoom-in;" /></a>
-      </div>
-    </div>
-  </div>
-  <div class="project">
-    <h3>Smart VIN Decoder</h3>
-    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
-      <div style="flex: 2; min-width: 250px;">
-        <p>Developed a Python-based terminal application that decodes VIN (Vehicle Identification Number) inputs using the National Highway Traffic Safety Administration (NHTSA) API. Users can view vehicle make, model, and year, store VIN history, and re-select from previously decoded VINs. <a href="https://github.com/ksu-is/Smart-VIN-Decoder/blob/main/vin_decoder.py" target="_blank">View source code</a>.</p>
-      </div>
-      <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 1rem;">
-        <a href="#lightbox-vin1"><img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png" alt="VIN Decoder Screenshot 1" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: zoom-in; width: 100%;" /></a>
-        <a href="#lightbox-vin2"><img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" alt="VIN Decoder Screenshot 2" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: zoom-in; width: 100%;" /></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    📧 <a href="mailto:SJ.Miller2k@gmail.com">SJ.Miller2k@gmail.com</a><br>
-    🔗 <a href="https://www.linkedin.com/in/booleanmethods/">LinkedIn</a><br>
-    💻 <a href="https://github.com/smill257">GitHub</a><br>
-    📄 <a href="https://github.com/smill257/Portfolio/raw/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" download>Resume</a>
-  </p>
-</section>
-
-<footer>
-  <p>&copy; 2025 Sam Miller. All rights reserved.</p>
-</footer>
-
-<!-- Floating Contact Card -->
+<!-- 💬 Floating Contact Card -->
 <div class="floating-contact">
   <h4>Contact Me</h4>
   <a href="mailto:SJ.Miller2k@gmail.com">📧 Email</a>
@@ -203,30 +181,99 @@
   <a href="https://github.com/smill257/Portfolio/raw/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" download>📄 Resume</a>
 </div>
 
-<!-- Lightbox Modal for AWS Diagram -->
-<div id="lightbox" class="lightbox">
-  <a href="#" style="position:absolute; top:20px; right:30px; font-size:2rem; color:white; text-decoration:none;">&times;</a>
-  <img class="lightbox-content" src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" alt="Enlarged AWS Network Diagram" />
-</div>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a passionate Information Security & Assurance student at Kennesaw State University. Through my academic journey, I've immersed myself in network security, ethical hacking, risk management, and compliance, all while maintaining an honors GPA and receiving academic recognition on the President's and Dean's Lists.</p>
+  <p><strong>Certifications:</strong> Python Bootcamp (Udemy), Cybersecurity (Cisco Networking Academy), Intro to Cloud Security (Simplilearn), CompTIA Security+ (In Progress)</p>
+  <p><strong>Skills:</strong> Python, Java, C++, HTML, SQL, Power BI, Tableau, Excel, Wireshark, Linux, AWS, Azure, Risk Assessment, Public Speaking, Leadership</p>
+</section>
 
-<!-- Lightbox Modals for VIN Decoder -->
-<div id="lightbox-vin1" class="lightbox">
-  <a href="#" style="position:absolute; top:20px; right:30px; font-size:2rem; color:white; text-decoration:none;">&times;</a>
-  <img class="lightbox-content" src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png" alt="Enlarged VIN Decoder Screenshot 1" />
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project">
+    <h3>Custom Encryption/Decryption Tool</h3>
+    <p>Developed a Python-based tool to decode hex-encoded messages using bitwise operations and generate SHA-256 hashes. Demonstrated secure data processing and cryptographic techniques.</p>
+  </div>
+<div class="project">
+  <h3>AWS Cloud Security Architecture</h3>
+  <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+    <div style="flex: 2;">
+      <p>
+        Designed and implemented a secure multi-AZ cloud environment using AWS services, including IAM, S3 encryption, CloudWatch monitoring, and disaster recovery strategies for a fictional auto firm. 
+        The architecture emphasizes fault tolerance, encryption at rest, access control, and real-time alerting.
+      </p>
+      <p style="font-size: 0.9rem; color: #555;">
+        <em>Diagram: Visual overview of the two-AZ AWS deployment.</em>
+      </p>
+    </div>
+    <div style="flex: 1; min-width: 250px;">
+      <img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png"
+           alt="AWS Network Diagram"
+           class="zoom-image"
+           style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 1px solid #ccc;" />
+    </div>
+  </div>
 </div>
-<div id="lightbox-vin2" class="lightbox">
-  <a href="#" style="position:absolute; top:20px; right:30px; font-size:2rem; color:white; text-decoration:none;">&times;</a>
-  <img class="lightbox-content" src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" alt="Enlarged VIN Decoder Screenshot 2" />
+<div class="project">
+  <h3>Smart VIN Decoder</h3>
+  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+    <div style="flex: 2; min-width: 250px;">
+      <p>
+        Developed a VIN decoder in Python that queries the NHTSA API to return vehicle make, model, and year. Includes error handling, history tracking, and user prompts for deletion and confirmation. Designed with efficient code logic and user experience in mind.
+      </p>
+      <p>
+        Cached VIN results locally to avoid redundant API calls and allow for revisiting previously decoded vehicles. This project demonstrates real-world application of APIs, JSON parsing, and conditional programming.
+      </p>
+    </div>
+    <div style="flex: 1; min-width: 240px;">
+      <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png"
+           alt="VIN Decoder Interface Screenshot"
+           style="width: 100%; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 1rem;" />
+      <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png"
+           alt="VIN Decoder Output Screenshot"
+           style="width: 100%; border-radius: 8px; border: 1px solid #ccc;" />
+    </div>
+  </div>
 </div>
+  <div class="project">
+    <h3>IT Audit Risk Analysis</h3>
+    <p>Conducted SOX-aligned IT risk assessment, identified control weaknesses, and developed mitigation plans during an IT audit simulation for a fictional company.</p>
+  </div>
+  <div class="project">
+    <h3>Additional Projects</h3>
+    <ul class="project-list">
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank">Array Creator and Sorter (Java)</a></li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank">Calculator (Java)</a></li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four%20Game.java" target="_blank">Connect Four Game (Java)</a></li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Hash-Decrypter-Project.py" target="_blank">Hash Decrypter (Python)</a></li>
+      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Password%20Integrity.py" target="_blank">Password Integrity Validator (Python)</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience & Involvement</h2>
+  <div class="experience">
+    <h3>Upsilon Pi Epsilon (UPE)</h3>
+    <p>Member of the international computing honor society, recognized for academic excellence.</p>
+  </div>
+  <div class="experience">
+    <h3>Business Technology Association (BTA)</h3>
+    <p>Active member collaborating on the intersection of business and emerging technologies, with a focus on data analytics and cybersecurity.</p>
+  </div>
+  <div class="experience">
+    <h3>National Honor Society (NHS)</h3>
+    <p>Maintains high academic standing and contributes to service-based leadership initiatives.</p>
+  </div>
+  <div class="experience">
+    <h3>Feline Good Rescue</h3>
+    <p>Volunteer since 2019 supporting animal rehabilitation and adoption through daily care and socialization.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Sam Miller. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
-<script>
-  // Optional: Close lightbox when clicking outside the image
-  document.querySelectorAll('.lightbox').forEach(lightbox => {
-    lightbox.addEventListener('click', function(event) {
-      if (event.target === this) {
-        this.style.display = 'none';
-      }
-    });
-  });
