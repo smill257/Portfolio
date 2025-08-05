@@ -9,7 +9,7 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: #ffffff;
+      background: #f9f9f9;
       color: #2c2c2c;
       line-height: 1.8;
     }
@@ -23,23 +23,13 @@
       z-index: 1000;
     }
 
-    header h1 {
-      font-size: 3rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      font-weight: lighter;
-      color: #555;
-    }
-
     nav {
       background: #eeeeee;
       text-align: center;
       padding: 1rem 0;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 999;
     }
 
     nav a {
@@ -62,6 +52,7 @@
       margin: auto;
       background: #ffffff;
       border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     }
 
     h2 {
@@ -119,23 +110,27 @@
 
     .diagram-container {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      align-items: center;
-      justify-content: center;
-      margin-top: 1.5rem;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
     }
 
     .diagram-container img {
-      flex: 1 1 350px;
       max-width: 100%;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       border: 1px solid #ccc;
     }
 
+    .img-caption {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
     .floating-contact {
-      position: fixed;
+      position: absolute;
       top: 180px;
       left: 20px;
       width: 220px;
@@ -145,7 +140,7 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 1rem;
       font-size: 0.95rem;
-      z-index: 99;
+      z-index: 98;
     }
 
     .floating-contact h4 {
@@ -173,6 +168,22 @@
       }
     }
   </style>
+  <script>
+    // Prevent floating card from overlapping header
+    window.addEventListener('scroll', () => {
+      const contactCard = document.querySelector('.floating-contact');
+      const headerHeight = document.querySelector('header').offsetHeight + 20;
+      const scrollTop = window.scrollY;
+
+      if (scrollTop + 20 >= headerHeight) {
+        contactCard.style.position = 'fixed';
+        contactCard.style.top = '20px';
+      } else {
+        contactCard.style.position = 'absolute';
+        contactCard.style.top = `${headerHeight}px`;
+      }
+    });
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -215,28 +226,21 @@
   <div class="project">
     <h3>AWS Cloud Security Architecture</h3>
     <div class="diagram-container">
-      <div style="flex: 1.5; min-width: 250px;">
-        <p>Designed and implemented a secure multi-AZ cloud environment using AWS services, including IAM, S3 encryption, CloudWatch monitoring, and disaster recovery strategies for a fictional auto firm. The architecture emphasizes fault tolerance, encryption at rest, access control, and real-time alerting.</p>
-        <p style="font-size: 0.9rem; color: #777;"><em>Diagram: Visual overview of the two-AZ AWS deployment.</em></p>
-      </div>
-      <div style="flex: 1; min-width: 220px;">
-        <img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" alt="AWS Network Diagram" />
-      </div>
+      <img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" alt="AWS Architecture Diagram" />
+      <p class="img-caption">Diagram: Visual overview of the two-AZ AWS deployment.</p>
     </div>
+    <p>Designed and implemented a secure multi-AZ cloud environment using AWS services, including IAM, S3 encryption, CloudWatch monitoring, and disaster recovery strategies for a fictional auto firm. Emphasized fault tolerance, encryption at rest, access control, and real-time alerting.</p>
   </div>
 
   <div class="project">
     <h3>Smart VIN Decoder</h3>
     <div class="diagram-container">
-      <div style="flex: 2; min-width: 250px;">
-        <p>Developed a VIN decoder in Python that queries the NHTSA API to return vehicle make, model, and year. Includes error handling, history tracking, and user prompts for deletion and confirmation.</p>
-        <p>Cached VIN results locally to avoid redundant API calls. Demonstrates real-world application of APIs, JSON parsing, and conditional programming.</p>
-      </div>
-      <div style="flex: 1; min-width: 240px;">
-        <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png" alt="VIN Decoder UI" style="margin-bottom: 1rem;" />
-        <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" alt="VIN Decoder Output" />
-      </div>
+      <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png" alt="VIN Decoder UI Screenshot" />
+      <p class="img-caption">Screenshot: Smart VIN Decoder interface built with Python.</p>
+      <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" alt="VIN Decoder Output Screenshot" />
+      <p class="img-caption">Screenshot: Decoded vehicle information displayed from NHTSA API.</p>
     </div>
+    <p>Developed a VIN decoder in Python that queries the NHTSA API to return vehicle make, model, and year. Includes error handling, history tracking, and efficient local caching to avoid redundant API calls.</p>
   </div>
 
   <div class="project">
@@ -246,7 +250,7 @@
 
   <div class="project">
     <h3>Additional Projects</h3>
-    <ul class="project-list" style="list-style: disc; padding-left: 1.5rem;">
+    <ul style="list-style: disc; padding-left: 1.5rem;">
       <li><a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank">Array Creator and Sorter (Java)</a></li>
       <li><a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank">Calculator (Java)</a></li>
       <li><a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four%20Game.java" target="_blank">Connect Four Game (Java)</a></li>
@@ -258,17 +262,14 @@
 
 <section id="experience">
   <h2>Experience & Involvement</h2>
-
   <div class="experience">
     <h3>Upsilon Pi Epsilon (UPE)</h3>
     <p>Member of the international computing honor society, recognized for academic excellence.</p>
   </div>
-
   <div class="experience">
     <h3>Business Technology Association (BTA)</h3>
     <p>Active member collaborating on the intersection of business and emerging technologies, with a focus on data analytics and cybersecurity.</p>
   </div>
-
   <div class="experience">
     <h3>National Honor Society (NHS)</h3>
     <p>Maintains high academic standing and contributes to service-based leadership initiatives.</p>
@@ -281,3 +282,5 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
