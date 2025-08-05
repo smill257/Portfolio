@@ -121,10 +121,10 @@
       color: #555;
     }
 
-    /* Floating Contact Card (Left-Side, Below Header) */
+ /* Floating Contact Card (Left-Side, Below Header & Nav) */
 .floating-contact {
   position: fixed;
-  top: 400px; /* Adjusted to be below the header */
+  top: calc(4rem + 1rem + 70px); /* header padding + nav height + spacing */
   left: 20px;
   width: 220px;
   background: #ffffff;
@@ -133,7 +133,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding: 1rem;
   font-size: 0.95rem;
-  z-index: 900; /* below sticky nav bar */
+  z-index: 900;
 }
 .floating-contact h4 {
   margin-top: 0;
@@ -156,7 +156,6 @@
     display: none;
   }
 }
-
   </style>
 </head>
 <body>
