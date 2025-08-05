@@ -9,17 +9,20 @@
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: #121212;
-    color: #e0e0e0;
+    background: #f4f4f4;
+    color: #2c2c2c;
     line-height: 1.8;
   }
 
   header {
-    background: #000;
-    color: #00bfa5;
-    padding: 4rem 2rem;
-    text-align: center;
-  }
+  background: #1a1a1a;
+  color: #ab47bc;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative; /* Add this */
+  z-index: 1000;       /* Add this */
+}
+
 
   header h1 {
     font-size: 3rem;
@@ -28,11 +31,11 @@
   header p {
     font-size: 1.2rem;
     font-weight: lighter;
-    color: #c0c0c0;
+    color: #ccc;
   }
 
   nav {
-    background: #1a1a1a;
+    background: #2b2b2b;
     text-align: center;
     padding: 1rem 0;
     position: sticky;
@@ -41,7 +44,7 @@
   }
 
   nav a {
-    color: #e0e0e0;
+    color: #f0f0f0;
     margin: 0 2rem;
     text-decoration: none;
     font-weight: bold;
@@ -50,9 +53,7 @@
   }
 
   nav a:hover {
-    color: #00bfa5;
-    background-color: #222;
-    border-radius: 4px;
+    color: #ab47bc;
     text-decoration: underline;
   }
 
@@ -60,61 +61,61 @@
     padding: 3rem 2rem;
     max-width: 900px;
     margin: auto;
-    background: #1f1f1f;
+    background: #f9f9f9;
     border-radius: 8px;
   }
 
   h2 {
     font-size: 2.2rem;
-    color: #1a73e8;
-    border-bottom: 2px solid #333;
+    color: #7e57c2;
+    border-bottom: 2px solid #ddd;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
   }
 
   .project, .experience {
-    background: #2c2c2c;
+    background: #ffffff;
     border-radius: 8px;
     padding: 1.2rem 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     margin-bottom: 2rem;
   }
 
   .project h3 {
-    color: #1a73e8;
+    color: #7e57c2;
     margin-bottom: 0.5rem;
   }
 
   .project a, .experience a {
-    color: #00bfa5;
+    color: #7e57c2;
     text-decoration: none;
   }
 
   .project a:hover, .experience a:hover {
-    color: #1a73e8;
+    color: #ab47bc;
     text-decoration: underline;
   }
 
   footer {
-    background: #000;
-    color: #777;
+    background: #1a1a1a;
+    color: #aaa;
     text-align: center;
     padding: 2rem;
     font-size: 1rem;
   }
 
   .contact a {
-    color: #00bfa5;
+    color: #7e57c2;
     text-decoration: none;
   }
 
   .contact a:hover {
     text-decoration: underline;
-    color: #1a73e8;
+    color: #ab47bc;
   }
 
   .resume-link a {
-    background: #1a73e8;
+    background: #7e57c2;
     color: white;
     padding: 0.6rem 1rem;
     border-radius: 6px;
@@ -124,14 +125,14 @@
   }
 
   .resume-link a:hover {
-    background: #0f5ecb;
+    background: #5e35b1;
   }
 
   .diagram-container {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     margin-top: 1.5rem;
   }
@@ -140,40 +141,48 @@
     flex: 1 1 350px;
     max-width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    border: 1px solid #444;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 1px solid #ccc;
   }
 
   .floating-contact {
     position: fixed;
-    top: calc(4rem + 1rem + 70px);
+    top: 100px;
     left: 20px;
     width: 220px;
-    background: #2a2a2a;
-    border: 1px solid #444;
+    background: #ffffff;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 1rem;
     font-size: 0.95rem;
     z-index: 900;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .floating-contact.visible {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .floating-contact h4 {
     margin-top: 0;
     margin-bottom: 0.5rem;
     font-size: 1rem;
-    color: #e0e0e0;
+    color: #2c2c2c;
   }
 
   .floating-contact a {
     display: block;
-    color: #1a73e8;
+    color: #7e57c2;
     text-decoration: none;
     margin-bottom: 0.5rem;
   }
 
   .floating-contact a:hover {
-    color: #00bfa5;
+    color: #ab47bc;
     text-decoration: underline;
   }
 
@@ -183,6 +192,7 @@
     }
   }
 </style>
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <meta name="description" content="Sam Miller's portfolio showcasing skills in Information Security, Cybersecurity, and Assurance.">
   <meta name="keywords" content="Sam Miller, Cybersecurity, Information Security, Portfolio, Kennesaw State University">
@@ -297,10 +307,6 @@
   <div class="experience">
     <h3>National Honor Society (NHS)</h3>
     <p>Maintains high academic standing and contributes to service-based leadership initiatives.</p>
-  </div>
-  <div class="experience">
-    <h3>Feline Good Rescue</h3>
-    <p>Volunteer since 2019 supporting animal rehabilitation and adoption through daily care and socialization.</p>
   </div>
 </section>
 
