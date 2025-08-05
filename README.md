@@ -1,2 +1,3 @@
 # Portfolio
-Portfolio and Projects of Sam Miller
+
+Showcase of all notible projects by Sam Miller. 
