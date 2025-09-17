@@ -188,58 +188,70 @@
     <div class="experience"><h3>National Honor Society (NHS)</h3><p>Service-based leadership with high academic standing.</p></div>
   </section>
 
-  <!-- Contact Sidebar -->
-  <button id="contactOpen" class="contact-toggle" type="button"
-          aria-controls="contactSidebar" aria-expanded="false">Contact</button>
+<!-- Contact Sidebar -->
+<button id="contactOpen" class="contact-toggle" type="button"
+        aria-controls="contactSidebar" aria-expanded="false">Contact</button>
 
-  <div id="contactOverlay" class="contact-overlay"></div>
+<div id="contactOverlay" class="contact-overlay"></div>
 
-  <aside id="contactSidebar" class="contact-sidebar" role="dialog"
-         aria-modal="true" aria-labelledby="contactTitle" tabindex="-1">
-    <h3 id="contactTitle">Contact Me</h3>
-    <a href="mailto:SJ.Miller2k@gmail.com">📧 Email</a>
-    <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank" rel="noopener">🔗 LinkedIn</a>
-    <a href="https://github.com/smill257" target="_blank" rel="noopener">💻 GitHub</a>
-    <a href="https://github.com/smill257/Portfolio/raw/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" rel="noopener" download>📄 Resume</a>
-    <button id="contactClose" class="close-btn" type="button">Close</button>
-  </aside>
+<aside id="contactSidebar" class="contact-sidebar" role="dialog"
+       aria-modal="true" aria-labelledby="contactTitle" tabindex="-1">
+  <h3 id="contactTitle">Contact Me</h3>
+  <a href="mailto:SJ.Miller2k@gmail.com">📧 Email</a>
+  <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+  <a href="https://github.com/smill257" target="_blank" rel="noopener">💻 GitHub</a>
+  <a href="https://github.com/smill257/Portfolio/raw/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" rel="noopener" download>📄 Resume</a>
+  <button id="contactClose" class="close-btn" type="button">Close</button>
+</aside>
 
-  <script>
-  // Contact sidebar logic
-  (function(){
-    const openBtn  = document.getElementById('contactOpen');
-    const closeBtn = document.getElementById('contactClose');
-    const sidebar  = document.getElementById('contactSidebar');
-    const overlay  = document.getElementById('contactOverlay');
-    if (!openBtn || !closeBtn || !sidebar || !overlay) return;
+<script>
+(function(){
+  const openBtn  = document.getElementById('contactOpen');
+  const closeBtn = document.getElementById('contactClose');
+  const sidebar  = document.getElementById('contactSidebar');
+  const overlay  = document.getElementById('contactOverlay');
+  if (!openBtn || !closeBtn || !sidebar || !overlay) return;
 
-    function openPanel(){
-      sidebar.classList.add('open');
-      overlay.classList.add('show');
-      openBtn.setAttribute('aria-expanded','true');
-      sidebar.focus();
-      document.body.style.overflow = 'hidden';
-    }
-    function closePanel(){
-      sidebar.classList.remove('open');
-      overlay.classList.remove('show');
-      openBtn.setAttribute('aria-expanded','false');
-      openBtn.focus();
-      document.body.style.overflow = '';
-    }
+  function openPanel(){
+    sidebar.classList.add('open');
+    overlay.classList.add('show');
+    openBtn.setAttribute('aria-expanded','true');
+    sidebar.focus();
+    document.body.style.overflow = 'hidden';
+  }
+  function closePanel(){
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+    openBtn.setAttribute('aria-expanded','false');
+    openBtn.focus();
+    document.body.style.overflow = '';
+  }
 
-    openBtn.addEventListener('click', openPanel);
-    closeBtn.addEventListener('click', closePanel);
-    overlay.addEventListener('click', closePanel);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
-  })();
-  </script>
+  openBtn.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+  overlay.addEventListener('click', closePanel);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+})();
+</script>
 
-  <footer>
-    <p>&copy; 2025 Sam Miller. All rights reserved.</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Sam Miller. All rights reserved.</p>
+</footer>
 
-  <script>
+<script>
+  // Project filter
+  const grid = document.getElementById('grid');
+  const btns = [...document.querySelectorAll('#filters button')];
+  btns.forEach(b => b.addEventListener('click', () => {
+    btns.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const tag = b.dataset.tag;
+    [...grid.children].forEach(card => {
+      card.style.display = (tag === 'all' || card.dataset.tags.includes(tag)) ? 'flex' : 'none';
+    });
+  }));
+</script>
+
   // Project filter
   (function(){
     const grid = document.getElementById('grid');
