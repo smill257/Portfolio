@@ -51,7 +51,7 @@
     /* Contact Sidebar */
     .contact-toggle { position: fixed; left: 16px; bottom: 20px; z-index: 1001; border: 1px solid var(--brand); color: var(--brand); background: #fff; border-radius: 999px; padding: .55rem .9rem; cursor: pointer; font-weight: 700; }
     .contact-toggle:focus { outline: 2px solid var(--brand); }
-
+      
     .contact-sidebar {
       position: fixed; top: 0; left: 0; height: 100vh; width: var(--sidebar-w);
       background: #fff; border-right: 1px solid #ddd; box-shadow: 2px 0 16px rgba(0,0,0,.08);
@@ -72,6 +72,22 @@
     @media (max-width: 768px) {
       .floating-contact { display: none; }
     }
+    .contact-sidebar .close-btn {
+  margin-top: auto;                /* push it to the bottom */
+  border: 1px solid var(--brand);
+  color: var(--brand);
+  background: #fff;
+  border-radius: 8px;
+  padding: .55rem .9rem;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+}
+.contact-sidebar .close-btn:hover {
+  background: var(--brand);
+  color: #fff;
+}
+
   </style>
 <!-- Contact Sidebar -->
 <button id="contactOpen"
@@ -95,7 +111,8 @@
   <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank" rel="noopener">🔗 LinkedIn</a>
   <a href="https://github.com/smill257" target="_blank" rel="noopener">💻 GitHub</a>
   <a href="https://github.com/smill257/Portfolio/raw/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" rel="noopener" download>📄 Resume</a>
-  <button id="contactClose" class="contact-toggle" type="button" style="position:static;margin-top:auto">Close</button>
+  <button id="contactClose" class="close-btn" type="button">Close</button>
+
 </aside>
 <script>
 (function(){
