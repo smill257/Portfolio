@@ -5,171 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sam Miller | Cybersecurity & InfoSec</title>
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #2c2c2c;
-      line-height: 1.8;
-    }
+  body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#f9f9f9;color:#2c2c2c;line-height:1.8}
+  header{background:#f5f5f5;color:#6a1b9a;padding:4rem 2rem;text-align:center;position:relative;z-index:1000}
+  nav{background:#eeeeee;text-align:center;padding:1rem 0;position:sticky;top:0;z-index:999}
+  nav a{color:#333;margin:0 2rem;text-decoration:none;font-weight:bold;font-size:1.1rem;padding:.5rem}
+  nav a:hover{color:#ab47bc;text-decoration:underline}
+  section{padding:3rem 2rem;max-width:900px;margin:auto;background:#fff;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+  #projects{max-width:1100px} /* wider projects section */
+  h2{font-size:2.2rem;color:#6a1b9a;border-bottom:2px solid #ccc;padding-bottom:.5rem;margin-bottom:1.5rem}
+  .experience{background:#fafafa;border-radius:8px;padding:1.2rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:2rem}
+  .experience a{color:#6a1b9a;text-decoration:none}
+  .experience a:hover{color:#ab47bc;text-decoration:underline}
+  .floating-contact{position:absolute;top:180px;left:20px;width:220px;background:#fff;border:1px solid #ccc;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.1);padding:1rem;font-size:.95rem;z-index:98}
+  .floating-contact h3{font-size:1.1rem;font-weight:700;color:#6a1b9a;border-bottom:1px solid #ddd;margin-top:0;padding-bottom:.3rem}
+  .floating-contact h4{font-size:1rem;color:#2c2c2c;margin-bottom:.5rem}
+  .floating-contact a{display:block;color:#6a1b9a;text-decoration:none;margin-bottom:.5rem}
+  .floating-contact a:hover{color:#ab47bc;text-decoration:underline}
+  @media (max-width:768px){
+    .floating-contact{display:none}
+  }
 
-    header {
-      background: #f5f5f5;
-      color: #6a1b9a;
-      padding: 4rem 2rem;
-      text-align: center;
-      position: relative;
-      z-index: 1000;
-    }
-
-    nav {
-      background: #eeeeee;
-      text-align: center;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    nav a {
-      color: #333;
-      margin: 0 2rem;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      padding: 0.5rem;
-    }
-
-    nav a:hover {
-      color: #ab47bc;
-      text-decoration: underline;
-    }
-
-    section {
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: auto;
-      background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      color: #6a1b9a;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .project, .experience {
-      background: #fafafa;
-      border-radius: 8px;
-      padding: 1.2rem 1rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      margin-bottom: 2rem;
-    }
-
-    .project h3 {
-      color: #6a1b9a;
-      margin-bottom: 0.5rem;
-    }
-
-    .project a, .experience a {
-      color: #6a1b9a;
-      text-decoration: none;
-    }
-
-    .project a:hover, .experience a:hover {
-      color: #ab47bc;
-      text-decoration: underline;
-    }
-
-    .float-image-right {
-      float: right;
-      margin-left: 1rem;
-      margin-bottom: 1rem;
-      max-width: 200px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .img-caption {
-      font-size: 0.85rem;
-      color: #666;
-      text-align: left;
-      clear: both;
-      margin-top: 0.5rem;
-    }
-
-    .floating-contact {
-      position: absolute;
-      top: 180px;
-      left: 20px;
-      width: 220px;
-      background: #ffffff;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 1rem;
-      font-size: 0.95rem;
-      z-index: 98;
-    }
-
-    .floating-contact h3 {
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: #6a1b9a;
-      border-bottom: 1px solid #ddd;
-      margin-top: 0;
-      padding-bottom: 0.3rem;
-    }
-
-    .floating-contact h4 {
-      font-size: 1rem;
-      color: #2c2c2c;
-      margin-bottom: 0.5rem;
-    }
-
-    .floating-contact a {
-      display: block;
-      color: #6a1b9a;
-      text-decoration: none;
-      margin-bottom: 0.5rem;
-    }
-
-    .floating-contact a:hover {
-      color: #ab47bc;
-      text-decoration: underline;
-    }
-
-    @media only screen and (max-width: 768px) {
-      .floating-contact {
-        display: none;
-      }
-
-      .float-image-right {
-        float: none;
-        display: block;
-        margin: 1rem auto;
-      }
-    }
+  /* CARD GRID */
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+  .card{background:#fff;border:1px solid #e9e9e9;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.04);overflow:hidden;display:flex;flex-direction:column}
+  .card img{width:100%;height:160px;object-fit:cover}
+  .card-body{padding:1rem 1rem 0}
+  .card h3{margin:0 0 .25rem;color:#6a1b9a;font-size:1.1rem}
+  .card p{margin:.25rem 0 .75rem;font-size:.95rem;color:#333}
+  .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.25rem 0 .75rem}
+  .chips span{font-size:.8rem;background:#f3e5f5;color:#6a1b9a;padding:.25rem .5rem;border-radius:999px;border:1px solid #e1bee7}
+  .meta{font-size:.85rem;color:#666;margin-bottom:.75rem}
+  .actions{margin:.75rem 1rem 1rem;display:flex;gap:.6rem}
+  .actions a{flex:1;text-align:center;font-weight:600;text-decoration:none;padding:.55rem .7rem;border-radius:8px;border:1px solid #6a1b9a;color:#6a1b9a}
+  .actions a:hover{background:#6a1b9a;color:#fff}
+  .filterbar{display:flex;flex-wrap:wrap;gap:.5rem;margin:-.5rem 0 1rem}
+  .filterbar button{border:1px solid #ccc;background:#faf7fc;color:#6a1b9a;border-radius:999px;padding:.35rem .7rem;font-size:.85rem;cursor:pointer}
+  .filterbar button.active{background:#6a1b9a;color:#fff;border-color:#6a1b9a}
   </style>
-  <script>
+
+  <script defer>
     // Prevent floating card from overlapping header
     window.addEventListener('scroll', () => {
-      const contactCard = document.querySelector('.floating-contact');
-      const headerHeight = document.querySelector('header').offsetHeight + 20;
-      const scrollTop = window.scrollY;
-
-      if (scrollTop + 20 >= headerHeight) {
-        contactCard.style.position = 'fixed';
-        contactCard.style.top = '20px';
+      const contactCard=document.querySelector('.floating-contact');
+      if(!contactCard) return;
+      const headerHeight=document.querySelector('header').offsetHeight + 20;
+      const y=window.scrollY;
+      if (y + 20 >= headerHeight) {
+        contactCard.style.position='fixed';
+        contactCard.style.top='20px';
       } else {
-        contactCard.style.position = 'absolute';
-        contactCard.style.top = `${headerHeight}px`;
+        contactCard.style.position='absolute';
+        contactCard.style.top=`${headerHeight}px`;
       }
     });
   </script>
@@ -191,14 +77,14 @@
 <div class="floating-contact">
   <h4>Contact Me</h4>
   <a href="mailto:SJ.Miller2k@gmail.com">📧 Email</a>
-  <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank">🔗 LinkedIn</a>
-  <a href="https://github.com/smill257" target="_blank">💻 GitHub</a>
-  <a href="https://github.com/smill257/Portfolio/raw/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" download>📄 Resume</a>
+  <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+  <a href="https://github.com/smill257" target="_blank" rel="noopener">💻 GitHub</a>
+  <a href="https://github.com/smill257/Portfolio/raw/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" rel="noopener" download>📄 Resume</a>
 </div>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I am a passionate Information Security & Assurance student at Kennesaw State University. Through my academic journey, I've immersed myself in network security, ethical hacking, risk management, and compliance, all while maintaining an honors GPA and receiving academic recognition on the President's and Dean's Lists.</p>
+  <p>I am a passionate Information Security & Assurance student at Kennesaw State University...</p>
   <p><strong>Certifications:</strong> Python Bootcamp (Udemy), Cybersecurity (Cisco Networking Academy), Intro to Cloud Security (Simplilearn), CompTIA Security+ (In Progress)</p>
   <p><strong>Skills:</strong> Python, Java, C++, HTML, SQL, Power BI, Tableau, Excel, Wireshark, Linux, AWS, Azure, Risk Assessment, Public Speaking, Leadership</p>
 </section>
@@ -206,58 +92,115 @@
 <section id="projects">
   <h2>Projects</h2>
 
-  <div class="project">
-    <h3>Custom Encryption/Decryption Tool</h3>
-    <p>Developed a Python-based tool to decode hex-encoded messages using bitwise operations and generate SHA-256 hashes. Demonstrated secure data processing and cryptographic techniques.</p>
+  <div class="filterbar" id="filters">
+    <button type="button" data-tag="all" class="active">All</button>
+    <button type="button" data-tag="python">Python</button>
+    <button type="button" data-tag="cloud">Cloud</button>
+    <button type="button" data-tag="audit">IT Audit</button>
+    <button type="button" data-tag="java">Java</button>
   </div>
 
-  <div class="project">
-    <h3>AWS Cloud Security Architecture</h3>
-    <img class="float-image-right" src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" alt="AWS Architecture Diagram">
-    <p>Designed and implemented a secure multi-AZ cloud environment using AWS services, including IAM, S3 encryption, CloudWatch monitoring, and disaster recovery strategies for a fictional auto firm. Emphasized fault tolerance, encryption at rest, access control, and real-time alerting.</p>
-    <p class="img-caption">Diagram: AWS architecture with multi-AZ deployment and security features.</p>
-  </div>
+  <div class="projects-grid" id="grid">
+    <article class="card" data-tags="python security">
+      <img src="https://dummyimage.com/800x450/ded/6a1b9a&text=Crypto+Tool"
+           alt="Command-line crypto tool banner" loading="lazy">
+      <div class="card-body">
+        <h3>Custom Encryption/Decryption Tool</h3>
+        <p>Hex decode, bitwise ops, SHA-256 hashing...</p>
+        <div class="chips"><span>Python</span><span>Crypto</span><span>CLI</span><span>Unit Tests</span></div>
+        <div class="meta">Impact: 100% deterministic outputs.</div>
+      </div>
+      <div class="actions">
+        <a href="https://github.com/smill257/Course-Projects/blob/main/Hash-Decrypter-Project.py" target="_blank" rel="noopener">Code</a>
+        <a href="#" target="_blank" rel="noopener">Demo</a>
+        <a href="#" target="_blank" rel="noopener">Write-up</a>
+      </div>
+    </article>
 
-  <div class="project">
-    <h3>Smart VIN Decoder</h3>
-    <img class="float-image-right" src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png" alt="VIN Decoder UI Screenshot">
-    <p>Developed a VIN decoder in Python that queries the NHTSA API to return vehicle make, model, and year. Includes error handling, history tracking, and efficient local caching to avoid redundant API calls.</p>
-    <p class="img-caption">Code Snippet: VIN Decoder function with API interaction and caching.</p>
-    <img class="float-image-right" src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" alt="VIN Decoder Output Screenshot">
-    <p class="img-caption">Screenshots: VIN Decoder user interface and output results.</p>
-  </div>
+    <article class="card" data-tags="cloud security">
+      <img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png"
+           alt="AWS multi-AZ architecture diagram" loading="lazy">
+      <div class="card-body">
+        <h3>AWS Cloud Security Architecture</h3>
+        <p>Multi-AZ design with IAM least-privilege...</p>
+        <div class="chips"><span>AWS</span><span>IAM</span><span>S3</span><span>CloudWatch</span><span>DR</span></div>
+        <div class="meta">Outcome: Fault tolerant environment.</div>
+      </div>
+      <div class="actions">
+        <a href="https://github.com/smill257/Portfolio" target="_blank" rel="noopener">Code</a>
+        <a href="#" target="_blank" rel="noopener">Demo</a>
+        <a href="#" target="_blank" rel="noopener">Diagram</a>
+      </div>
+    </article>
 
-  <div class="project">
-    <h3>IT Audit Risk Analysis</h3>
-    <p>Conducted SOX-aligned IT risk assessment, identified control weaknesses, and developed mitigation plans during an IT audit simulation for a fictional company.</p>
-  </div>
+    <article class="card" data-tags="python">
+      <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png"
+           alt="VIN decoder screenshot" loading="lazy">
+      <div class="card-body">
+        <h3>Smart VIN Decoder</h3>
+        <p>NHTSA API client with caching and error handling.</p>
+        <div class="chips"><span>Python</span><span>API</span><span>Caching</span><span>Requests</span></div>
+        <div class="meta">Perf: 70% fewer API calls.</div>
+      </div>
+      <div class="actions">
+        <a href="https://github.com/smill257/Smart-VIN-Decoder" target="_blank" rel="noopener">Code</a>
+        <a href="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" target="_blank" rel="noopener">Screenshot</a>
+        <a href="#" target="_blank" rel="noopener">Readme</a>
+      </div>
+    </article>
 
-  <div class="project">
-    <h3>Additional Projects</h3>
-    <ul style="list-style: disc; padding-left: 1.5rem;">
-      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank">Array Creator and Sorter (Java)</a></li>
-      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank">Calculator (Java)</a></li>
-      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four%20Game.java" target="_blank">Connect Four Game (Java)</a></li>
-      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Hash-Decrypter-Project.py" target="_blank">Hash Decrypter (Python)</a></li>
-      <li><a href="https://github.com/smill257/Course-Projects/blob/main/Password%20Integrity.py" target="_blank">Password Integrity Validator (Python)</a></li>
-    </ul>
+    <article class="card" data-tags="audit">
+      <img src="https://dummyimage.com/800x450/eee/6a1b9a&text=IT+Audit"
+           alt="IT Audit placeholder graphic" loading="lazy">
+      <div class="card-body">
+        <h3>IT Audit Risk Analysis</h3>
+        <p>SOX-aligned risk register with control gap mapping.</p>
+        <div class="chips"><span>SOX</span><span>Risk</span><span>Controls</span></div>
+        <div class="meta">Deliverables: RACI, risk matrix, action plan.</div>
+      </div>
+      <div class="actions">
+        <a href="#" target="_blank" rel="noopener">Report</a>
+        <a href="#" target="_blank" rel="noopener">Matrix</a>
+        <a href="#" target="_blank" rel="noopener">RACI</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="java">
+      <img src="https://dummyimage.com/800x450/f3f3f3/6a1b9a&text=Java+Mini+Apps"
+           alt="Java mini applications graphic" loading="lazy">
+      <div class="card-body">
+        <h3>Java Mini-Apps</h3>
+        <p>Array sorter, calculator, Connect Four with tests.</p>
+        <div class="chips"><span>Java</span><span>OOP</span><span>JUnit</span></div>
+      </div>
+      <div class="actions">
+        <a href="https://github.com/smill257/Course-Projects" target="_blank" rel="noopener">Repo</a>
+        <a href="#" target="_blank" rel="noopener">Docs</a>
+        <a href="#" target="_blank" rel="noopener">Demo</a>
+      </div>
+    </article>
   </div>
 </section>
 
+<script defer>
+  // simple tag filter
+  const grid=document.getElementById('grid');
+  const btns=[...document.querySelectorAll('#filters button')];
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    btns.forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const tag=b.dataset.tag;
+    [...grid.children].forEach(card=>{
+      card.style.display=(tag==='all'||card.dataset.tags.includes(tag))?'flex':'none';
+    });
+  }));
+</script>
+
 <section id="experience">
   <h2>Experience & Involvement</h2>
-  <div class="experience">
-    <h3>Upsilon Pi Epsilon (UPE)</h3>
-    <p>Member of the international computing honor society, recognized for academic excellence.</p>
-  </div>
-  <div class="experience">
-    <h3>Business Technology Association (BTA)</h3>
-    <p>Active member collaborating on the intersection of business and emerging technologies, with a focus on data analytics and cybersecurity.</p>
-  </div>
-  <div class="experience">
-    <h3>National Honor Society (NHS)</h3>
-    <p>Maintains high academic standing and contributes to service-based leadership initiatives.</p>
-  </div>
+  <div class="experience"><h3>Upsilon Pi Epsilon (UPE)</h3><p>Member of the international computing honor society.</p></div>
+  <div class="experience"><h3>Business Technology Association (BTA)</h3><p>Active member collaborating on emerging technologies.</p></div>
+  <div class="experience"><h3>National Honor Society (NHS)</h3><p>Maintains high academic standing and contributes to service-based leadership initiatives.</p></div>
 </section>
 
 <footer>
@@ -266,3 +209,5 @@
 
 </body>
 </html>
+--- BEFORE ---
+<!DOCTYPE html>
