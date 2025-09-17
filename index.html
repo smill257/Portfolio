@@ -17,11 +17,24 @@
   p{margin-bottom:1rem}
   strong{font-weight:600;color:#444}
 
-  /* Contact card */
-  .floating-contact{position:absolute;top:180px;left:20px;width:220px;background:#fff;border:1px solid #ccc;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.1);padding:1rem;font-size:.95rem;z-index:98}
-  .floating-contact h4{font-size:1rem;color:#2c2c2c;margin-bottom:.5rem}
-  .floating-contact a{display:block;color:#6a1b9a;text-decoration:none;margin-bottom:.5rem}
-  .floating-contact a:hover{color:#ab47bc;text-decoration:underline}
+/* Section width is 1100px. Card is 220px wide + 20px gutter = 240px */
+.floating-contact{
+  position: fixed;                 /* no scroll script needed */
+  top: 20px;
+  left: max(20px, calc((100vw - 1100px)/2 - 240px));
+  width: 220px;
+  background:#fff;
+  border:1px solid #ccc;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+  padding:1rem;
+  font-size:.95rem;
+  z-index: 900;                    /* below nav (999) */
+}
+
+@media (max-width: 1024px){
+  .floating-contact{ display:none; }  /* hide when space is tight */
+}
 
   /* Experience card */
   .experience{background:#fafafa;border-radius:8px;padding:1.2rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:2rem}
@@ -104,7 +117,7 @@
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I am a passionate Information Security & Assurance student at Kennesaw State University...</p>
+  <p>I am a passionate Information Security & Assurance student at Kennesaw State University</p>
   <p><strong>Certifications:</strong> Python Bootcamp (Udemy), Cybersecurity (Cisco Networking Academy), Intro to Cloud Security (Simplilearn), CompTIA Security+ (In Progress)</p>
   <p><strong>Skills:</strong> Python, Java, C++, HTML, SQL, Power BI, Tableau, Excel, Wireshark, Linux, AWS, Azure, Risk Assessment, Public Speaking, Leadership</p>
 </section>
@@ -175,6 +188,7 @@
         <div class="chips"><span>Java</span><span>OOP</span><span>JUnit</span></div>
       </div>
       <div class="actions">
+        <a href="https://github.com/smill257/Course-Projects" target="_blank" rel="noopener">Repo</a>
         <a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank" rel="noopener">Array Sorter</a>
         <a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank" rel="noopener">Calculator</a>
         <a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four.java" target="_blank" rel="noopener">Connect Four</a>
