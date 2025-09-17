@@ -4,107 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sam Miller | Cybersecurity & InfoSec</title>
+
   <style>
-  /* Base */
-  body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#f9f9f9;color:#2c2c2c;line-height:1.8}
-  header{background:#f5f5f5;color:#6a1b9a;padding:4rem 2rem;text-align:center;position:relative;z-index:1000}
-  nav{background:#eeeeee;text-align:center;padding:1rem 0;position:sticky;top:0;z-index:999}
-  nav a{color:#333;margin:0 2rem;text-decoration:none;font-weight:bold;font-size:1.1rem;padding:.5rem}
-  nav a:hover{color:#ab47bc;text-decoration:underline}
-  section{padding:3rem 2rem;max-width:1100px;margin:auto;background:#fff;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.04)}
-  /* spacing for every section */
-section{margin-bottom:2.5rem}
-
-  h2{font-size:2.2rem;color:#6a1b9a;border-bottom:2px solid #ccc;padding-bottom:.5rem;margin-bottom:1.5rem}
-  p{margin-bottom:1rem}
-  strong{font-weight:600;color:#444}
-
-:root{
-  --container: 1100px;   /* your section max-width */
-  --contact: 220px;      /* card width */
-  --nav-h: 64px;         /* navbar height */
-}
-
-.floating-contact{
-  position: fixed;
-  top: calc(var(--nav-h) + 24px); /* sit below the sticky nav */
-  left: max(20px, calc((100vw - var(--container))/2 - (var(--contact) + 20px)));
-  width: var(--contact);
-  background:#fff;
-  border:1px solid #ccc;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,.1);
-  padding:1rem;
-  font-size:.95rem;
-  z-index: 998;          /* below nav (999) */
-}
-
-@media (max-width: 1200px){
-  .floating-contact{ display:none; } /* hide when there’s no gutter */
-}
-
-
-@media (max-width: 1024px){
-  .floating-contact{ display:none; }  /* hide when space is tight */
-}
-
-  /* Experience card */
-  .experience{background:#fafafa;border-radius:8px;padding:1.2rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:2rem}
-  .experience a{color:#6a1b9a;text-decoration:none}
-  .experience a:hover{color:#ab47bc;text-decoration:underline}
-
-  /* Projects grid */
-  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem; justify-items:center;}
-  .card{background:transparent;border:none;box-shadow:none;border-radius:0;display:flex;flex-direction:column;padding:1rem 0}
-  .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
-  .card-body{padding:1rem 0 0}
-  .card h3{margin:0 0 .25rem;color:#6a1b9a;font-size:1.1rem}
-  .card p{margin:.25rem 0 .75rem;font-size:.95rem;color:#333}
-  .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.25rem 0 .75rem}
-  .chips span{font-size:.8rem;background:#f3e5f5;color:#6a1b9a;padding:.25rem .5rem;border-radius:999px;border:1px solid #e1bee7}
-  .meta{font-size:.85rem;color:#666;margin-bottom:.75rem}
-  .actions{display:flex;gap:.6rem;margin:.75rem 0 0}
-  .actions a{flex:1;text-align:center;font-weight:600;text-decoration:none;padding:.55rem .7rem;border-radius:8px;border:1px solid #6a1b9a;color:#6a1b9a;background:#fff}
-  .actions a:hover{background:#6a1b9a;color:#fff}
-  .filterbar{display:flex;flex-wrap:wrap;gap:.5rem;margin:-.5rem 0 1rem}
-  .filterbar button{border:1px solid #ccc;background:#faf7fc;color:#6a1b9a;border-radius:999px;padding:.35rem .7rem;font-size:.85rem;cursor:pointer}
-  .filterbar button.active{background:#6a1b9a;color:#fff;border-color:#6a1b9a}
-
-  /* Footer */
-  footer{text-align:center;padding:1.5rem 0;background:#f5f5f5;color:#666;font-size:.9rem;margin-top:2rem}
-
-  /* Mobile */
-  @media (max-width:768px){
-    .floating-contact{display:none}
+  :root{
+    --container:1100px;   /* section width */
+    --contact:220px;      /* contact card width */
+    --nav-h:64px;         /* sticky nav height */
+    --brand:#6a1b9a;
   }
 
-  .card img {
-  width: 100%;
-  height: 200px;       /* force consistent height */
-  object-fit: cover;   /* crop if needed */
-}
+  /* Base */
+  body{font-family:'Roboto',sans-serif;margin:0;background:#f9f9f9;color:#2c2c2c;line-height:1.8}
+  header{background:#f5f5f5;color:var(--brand);padding:4rem 2rem;text-align:center;position:relative;z-index:1000}
+  nav{background:#eeeeee;text-align:center;padding:1rem 0;position:sticky;top:0;z-index:999}
+  nav a{color:#333;margin:0 2rem;text-decoration:none;font-weight:700}
+  nav a:hover{color:#ab47bc;text-decoration:underline}
+  section{padding:3rem 2rem;max-width:var(--container);margin:auto;background:#fff;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.04);margin-bottom:2.5rem}
+  h2{font-size:2.2rem;color:var(--brand);border-bottom:2px solid #ccc;padding-bottom:.5rem;margin-bottom:1.5rem}
+  p{margin:0 0 1rem} strong{font-weight:600;color:#444}
 
+  /* Floating contact — auto positions in left gutter, hidden if no space */
+  .floating-contact{display:none}
+  @media (min-width: calc(var(--container) + var(--contact) + 120px)){
+    .floating-contact{
+      display:block;position:fixed;top:calc(var(--nav-h) + 24px);
+      left:clamp(16px, calc((100vw - var(--container))/2 - var(--contact) - 24px), 48px);
+      width:var(--contact);background:#fff;border:1px solid #ccc;border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,.1);padding:1rem;font-size:.95rem;z-index:998
+    }
+    .floating-contact a{display:block;color:var(--brand);text-decoration:none;margin-bottom:.5rem}
+    .floating-contact a:hover{color:#ab47bc;text-decoration:underline}
+  }
+
+  /* Experience */
+  .experience{background:#fafafa;border-radius:8px;padding:1.2rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:2rem}
+
+  /* Projects */
+  .filterbar{display:flex;flex-wrap:wrap;gap:.5rem;margin:-.5rem 0 1rem}
+  .filterbar button{border:1px solid #ccc;background:#faf7fc;color:var(--brand);border-radius:999px;padding:.35rem .7rem;font-size:.85rem;cursor:pointer}
+  .filterbar button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+  .projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:1.2rem;
+    justify-content:center;   /* center last row */
+    align-items:stretch;
+  }
+  .card{
+    background:transparent;border:none;box-shadow:none;border-radius:0;
+    display:flex;flex-direction:column;padding:1rem 0;height:100%;
+  }
+  .card img{width:100%;height:200px;object-fit:cover;border-radius:8px;display:block}
+  .card-body{padding:1rem 0 0;flex:1}
+  .card h3{margin:0 0 .25rem;color:var(--brand);font-size:1.1rem}
+  .card p{margin:.25rem 0 .75rem;font-size:.95rem;color:#333}
+  .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.25rem 0 .75rem}
+  .chips span{font-size:.8rem;background:#f3e5f5;color:var(--brand);padding:.25rem .5rem;border-radius:999px;border:1px solid #e1bee7}
+  .meta{font-size:.85rem;color:#666;margin-bottom:.75rem}
+  .actions{display:flex;gap:.6rem;margin-top:.75rem}
+  .actions a{flex:1;text-align:center;font-weight:600;text-decoration:none;padding:.55rem .7rem;border-radius:8px;border:1px solid var(--brand);color:var(--brand);background:#fff}
+  .actions a:hover{background:var(--brand);color:#fff}
+
+  /* Footer */
+  footer{text-align:center;padding:1.5rem 0;background:#f5f5f5;color:#666;font-size:.9rem}
+
+  /* Mobile */
+  @media (max-width:768px){ .floating-contact{display:none} }
   </style>
 
-  
-
-  <script defer>
-    // Keep floating contact from overlapping header
-    window.addEventListener('scroll', () => {
-      const contactCard=document.querySelector('.floating-contact');
-      if(!contactCard) return;
-      const headerHeight=document.querySelector('header').offsetHeight + 20;
-      const y=window.scrollY;
-      if (y + 20 >= headerHeight) {
-        contactCard.style.position='fixed';
-        contactCard.style.top='20px';
-      } else {
-        contactCard.style.position='absolute';
-        contactCard.style.top=`${headerHeight}px`;
-      }
-    });
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -119,8 +88,8 @@ section{margin-bottom:2.5rem}
   <a href="#experience">Experience</a>
 </nav>
 
-<div class="floating-contact">
-  <h4>Contact Me</h4>
+<div class="floating-contact" aria-label="Contact links">
+  <h4 style="margin:0 0 .5rem;color:#2c2c2c">Contact Me</h4>
   <a href="mailto:SJ.Miller2k@gmail.com">📧 Email</a>
   <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank" rel="noopener">🔗 LinkedIn</a>
   <a href="https://github.com/smill257" target="_blank" rel="noopener">💻 GitHub</a>
@@ -129,8 +98,8 @@ section{margin-bottom:2.5rem}
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I am a passionate Information Security & Assurance student at Kennesaw State University</p>
-  <p><strong>Certifications:</strong> Python Bootcamp (Udemy), Cybersecurity (Cisco Networking Academy), Intro to Cloud Security (Simplilearn), CompTIA Security+ (In Progress)</p>
+  <p>Currently an Information Security & Assurance student at Kennesaw State University</p>
+  <p><strong>Certifications:</strong> Python Bootcamp (Udemy), Cybersecurity (Cisco Networking Academy), Intro to Cloud Security (Simplilearn), Precinct Certified User (WitFoo) </p>
   <p><strong>Skills:</strong> Python, Java, C++, HTML, SQL, Power BI, Tableau, Excel, Wireshark, Linux, AWS, Azure, Risk Assessment, Public Speaking, Leadership</p>
 </section>
 
@@ -140,57 +109,60 @@ section{margin-bottom:2.5rem}
   <div class="filterbar" id="filters">
     <button type="button" data-tag="all" class="active">All</button>
     <button type="button" data-tag="python">Python</button>
-    <button type="button" data-tag="cloud">Cloud</button>
-    <button type="button" data-tag="audit">IT Audit</button>
+    <button type="button" data-tag="cloud">AWS</button>
     <button type="button" data-tag="java">Java</button>
   </div>
 
   <div class="projects-grid" id="grid">
+    <!-- Encryption Tool -->
     <article class="card" data-tags="python security">
       <img src="https://dummyimage.com/800x450/ded/6a1b9a&text=Crypto+Tool"
-           alt="Command-line Encryption/Decryption Tool banner" loading="lazy">
+           alt="CLI encryption and hashing tool banner" loading="lazy">
       <div class="card-body">
         <h3>Custom Encryption/Decryption Tool</h3>
-        <p>Hex decode, bitwise ops, SHA-256 hashing...</p>
+        <p>Hex decode, bitwise ops, SHA-256 hashing. Focus on secure handling and testable modules.</p>
         <div class="chips"><span>Python</span><span>Cryptography</span><span>CLI</span><span>Unit Tests</span></div>
-        <div class="meta">Impact: 100% deterministic outputs.</div>
-      </div>
-      <div class="actions">
-        <a href="https://github.com/smill257/Course-Projects/blob/main/Hash-Decrypter-Project.py" target="_blank" rel="noopener">Code</a>
+        <div class="meta">Purpose: Enhance data security and integrity.</div>
+        <div class="actions">
+          <a href="https://github.com/smill257/Course-Projects/blob/main/Hash-Decrypter-Project.py" target="_blank" rel="noopener">Code</a>
+        </div>
       </div>
     </article>
 
+    <!-- AWS Architecture -->
     <article class="card" data-tags="cloud security">
       <img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png"
-           alt="AWS multi-AZ architecture diagram" loading="lazy">
+           alt="AWS multi-AZ security architecture diagram" loading="lazy">
       <div class="card-body">
         <h3>AWS Cloud Security Architecture</h3>
-        <p>Multi-AZ design with IAM least-privilege...</p>
-        <div class="chips"><span>AWS</span><span>IAM</span><span>S3</span><span>CloudWatch</span><span>DR</span></div>
-        <div class="meta">Outcome: Fault tolerant environment.</div>
-      </div>
-      <div class="actions">
-        <a href="#" target="_blank" rel="noopener">Demo</a>
-        <a href="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" target="_blank" rel="noopener">Diagram</a>
+        <p>Multi-AZ design with IAM least-privilege, S3 encryption, CloudWatch alerts, DR patterns.</p>
+        <div class="chips"><span>AWS</span><span>IAM</span><span>S3</span></div>
+        <div class="meta">Purpose: Secure cloud infrastructure.</div>
+        <div class="actions">
+          <a href="https://github.com/smill257/Portfolio" target="_blank" rel="noopener">Code</a>
+          <a href="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" target="_blank" rel="noopener">Diagram</a>
+        </div>
       </div>
     </article>
 
+    <!-- VIN Decoder -->
     <article class="card" data-tags="python">
       <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png"
-           alt="VIN decoder screenshot" loading="lazy">
+           alt="VIN decoder application screenshot" loading="lazy">
       <div class="card-body">
         <h3>Smart VIN Decoder</h3>
-        <p>NHTSA API client with caching and error handling.</p>
+        <p>NHTSA API client with caching and error handling. History view and idempotent lookups.</p>
         <div class="chips"><span>Python</span><span>API</span><span>Caching</span><span>Requests</span></div>
-        <div class="meta">Perf: 70% fewer API calls.</div>
-      </div>
-      <div class="actions">
-        <a href="https://github.com/smill257/Smart-VIN-Decoder" target="_blank" rel="noopener">Code</a>
-        <a href="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" target="_blank" rel="noopener">Screenshot</a>
-        <a href="https://github.com/smill257/Smart-VIN-Decoder/blob/main/README.md" target="_blank" rel="noopener">Readme</a>
+        <div class="meta">Purpose: Improve vehicle data accessibility and reliability.</div>
+        <div class="actions">
+          <a href="https://github.com/smill257/Smart-VIN-Decoder" target="_blank" rel="noopener">Code</a>
+          <a href="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" target="_blank" rel="noopener">Screenshot</a>
+          <a href="https://github.com/smill257/Smart-VIN-Decoder/blob/main/README.md" target="_blank" rel="noopener">Readme</a>
+        </div>
       </div>
     </article>
 
+    <!-- Java -->
     <article class="card" data-tags="java">
       <img src="https://dummyimage.com/800x450/f3f3f3/6a1b9a&text=Java+Mini+Apps"
            alt="Java mini applications graphic" loading="lazy">
@@ -198,19 +170,19 @@ section{margin-bottom:2.5rem}
         <h3>Java Mini-Apps</h3>
         <p>Array sorter, calculator, Connect Four with tests.</p>
         <div class="chips"><span>Java</span><span>OOP</span><span>JUnit</span></div>
-      </div>
-      <div class="actions">
-        <a href="https://github.com/smill257/Course-Projects" target="_blank" rel="noopener">Repo</a>
-        <a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank" rel="noopener">Array Sorter</a>
-        <a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank" rel="noopener">Calculator</a>
-        <a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four.java" target="_blank" rel="noopener">Connect Four</a>
+        <div class="actions">
+          <a href="https://github.com/smill257/Course-Projects" target="_blank" rel="noopener">Repo</a>
+          <a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank" rel="noopener">Array Sorter</a>
+          <a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank" rel="noopener">Calculator</a>
+          <a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four.java" target="_blank" rel="noopener">Connect Four</a>
+        </div>
       </div>
     </article>
   </div>
 </section>
 
-<script defer>
-  // tag filter
+<script>
+  // simple tag filter
   const grid=document.getElementById('grid');
   const btns=[...document.querySelectorAll('#filters button')];
   btns.forEach(b=>b.addEventListener('click',()=>{
@@ -225,6 +197,7 @@ section{margin-bottom:2.5rem}
 
 <section id="experience">
   <h2>Experience & Involvement</h2>
+  <div class="experience"><h3>President & Dean's list </h3><p>Maintaining a high GPA throughout my college career.</p></div>
   <div class="experience"><h3>Upsilon Pi Epsilon (UPE)</h3><p>Member of the international computing honor society.</p></div>
   <div class="experience"><h3>Business Technology Association (BTA)</h3><p>Active member collaborating on emerging technologies.</p></div>
   <div class="experience"><h3>National Honor Society (NHS)</h3><p>Maintains high academic standing and contributes to service-based leadership initiatives.</p></div>
@@ -236,7 +209,3 @@ section{margin-bottom:2.5rem}
 
 </body>
 </html>
-<style>
-  /* Base */
-  body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#f9f9f9;color:#2c2c2c;line-height:1.8}
-  header{background:#f5f5f5;color:#6a1b9a;padding:4rem 2rem;text-align:center;position:relative;z-index:1000}
