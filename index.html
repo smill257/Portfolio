@@ -6,6 +6,33 @@
   <title>Sam Miller | Cybersecurity & InfoSec</title>
 
   <style>
+
+    /* Sidebar */
+:root{ --sidebar-w: 280px; --brand:#6a1b9a; }
+.contact-toggle{position:fixed;left:16px;bottom:20px;z-index:1001;border:1px solid var(--brand);color:var(--brand);background:#fff;border-radius:999px;padding:.55rem .9rem;cursor:pointer;font-weight:700}
+.contact-toggle:focus{outline:2px solid var(--brand)}
+
+.contact-sidebar{
+  position:fixed; top:0; left:0; height:100vh; width:var(--sidebar-w);
+  background:#fff; border-right:1px solid #ddd; box-shadow:2px 0 16px rgba(0,0,0,.08);
+  transform:translateX(-100%); transition:transform .25s ease; z-index:1002;
+  display:flex; flex-direction:column; padding:1rem 1rem 1.25rem; gap:.75rem;
+}
+.contact-sidebar.open{ transform:translateX(0); }
+.contact-sidebar h3{margin:.25rem 0 0.5rem; color:var(--brand)}
+.contact-sidebar a{display:block; padding:.5rem .4rem; border-radius:8px; color:var(--brand); text-decoration:none}
+.contact-sidebar a:hover{background:#f6eefb}
+
+.contact-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.25);
+  opacity:0; pointer-events:none; transition:opacity .2s ease; z-index:1000;
+}
+.contact-overlay.show{ opacity:1; pointer-events:auto; }
+
+/* Hide floating card if you still have it */
+.floating-contact{display:none!important;}
+
+  /* Variables */
   :root{
     --container:1100px;   /* section width */
     --contact:220px;      /* contact card width */
@@ -44,6 +71,8 @@
   .filterbar button{border:1px solid #ccc;background:#faf7fc;color:var(--brand);border-radius:999px;padding:.35rem .7rem;font-size:.85rem;cursor:pointer}
   .filterbar button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
 
+
+
   .projects-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -74,6 +103,37 @@
   </style>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+<script>
+(function(){
+  const openBtn = document.getElementById('contactOpen');
+  const closeBtn = document.getElementById('contactClose');
+  const sidebar = document.getElementById('contactSidebar');
+  const overlay = document.getElementById('contactOverlay');
+
+  function open() {
+    sidebar.classList.add('open');
+    overlay.classList.add('show');
+    openBtn.setAttribute('aria-expanded','true');
+    sidebar.focus();
+    document.body.style.overflow='hidden';
+  }
+
+  function close() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+    openBtn.setAttribute('aria-expanded','false');
+    openBtn.focus();
+    document.body.style.overflow='';
+  }
+
+  openBtn.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', close);
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+})();
+</script>
+
 </head>
 <body>
 
@@ -202,6 +262,19 @@
   <div class="experience"><h3>Business Technology Association (BTA)</h3><p>Active member collaborating on emerging technologies.</p></div>
   <div class="experience"><h3>National Honor Society (NHS)</h3><p>Maintains high academic standing and contributes to service-based leadership initiatives.</p></div>
 </section>
+<!-- Slide-in Contact Sidebar -->
+<button class="contact-toggle" id="contactOpen" aria-haspopup="dialog" aria-controls="contactSidebar" aria-expanded="false">Contact</button>
+
+<div class="contact-overlay" id="contactOverlay"></div>
+
+<aside class="contact-sidebar" id="contactSidebar" role="dialog" aria-modal="true" aria-labelledby="contactTitle" tabindex="-1">
+  <h3 id="contactTitle">Contact Me</h3>
+  <a href="mailto:SJ.Miller2k@gmail.com">📧 Email</a>
+  <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+  <a href="https://github.com/smill257" target="_blank" rel="noopener">💻 GitHub</a>
+  <a href="https://github.com/smill257/Portfolio/raw/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" rel="noopener" download>📄 Resume</a>
+  <button class="contact-toggle" id="contactClose" style="position:static;margin-top:auto">Close</button>
+</aside>
 
 <footer>
   <p>&copy; 2025 Sam Miller. All rights reserved.</p>
