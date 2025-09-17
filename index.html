@@ -104,35 +104,24 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-<script>
+<!-- in <head> -->
+<script defer>
 (function(){
-  const openBtn = document.getElementById('contactOpen');
-  const closeBtn = document.getElementById('contactClose');
-  const sidebar = document.getElementById('contactSidebar');
-  const overlay = document.getElementById('contactOverlay');
+  const openBtn=document.getElementById('contactOpen');
+  const closeBtn=document.getElementById('contactClose');
+  const sidebar=document.getElementById('contactSidebar');
+  const overlay=document.getElementById('contactOverlay');
 
-  function open() {
-    sidebar.classList.add('open');
-    overlay.classList.add('show');
-    openBtn.setAttribute('aria-expanded','true');
-    sidebar.focus();
-    document.body.style.overflow='hidden';
-  }
+  function open(){sidebar.classList.add('open');overlay.classList.add('show');openBtn.setAttribute('aria-expanded','true');sidebar.focus();document.body.style.overflow='hidden'}
+  function close(){sidebar.classList.remove('open');overlay.classList.remove('show');openBtn.setAttribute('aria-expanded','false');openBtn.focus();document.body.style.overflow=''}
 
-  function close() {
-    sidebar.classList.remove('open');
-    overlay.classList.remove('show');
-    openBtn.setAttribute('aria-expanded','false');
-    openBtn.focus();
-    document.body.style.overflow='';
-  }
-
-  openBtn.addEventListener('click', open);
-  closeBtn.addEventListener('click', close);
-  overlay.addEventListener('click', close);
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+  openBtn.addEventListener('click',open);
+  closeBtn.addEventListener('click',close);
+  overlay.addEventListener('click',close);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape') close()});
 })();
 </script>
+
 
 </head>
 <body>
@@ -147,14 +136,6 @@
   <a href="#projects">Projects</a>
   <a href="#experience">Experience</a>
 </nav>
-
-<div class="floating-contact" aria-label="Contact links">
-  <h4 style="margin:0 0 .5rem;color:#2c2c2c">Contact Me</h4>
-  <a href="mailto:SJ.Miller2k@gmail.com">📧 Email</a>
-  <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank" rel="noopener">🔗 LinkedIn</a>
-  <a href="https://github.com/smill257" target="_blank" rel="noopener">💻 GitHub</a>
-  <a href="https://github.com/smill257/Portfolio/raw/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" rel="noopener" download>📄 Resume</a>
-</div>
 
 <section id="about">
   <h2>About Me</h2>
