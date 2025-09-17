@@ -37,10 +37,19 @@ h2{font-size:2rem;color:var(--brand);border-bottom:2px solid #e6e6e6;padding-bot
 .chips{display:flex;flex-wrap:wrap;gap:.4rem}
 .chips span{font-size:.8rem;background:#f3e5f5;color:var(--brand);padding:.25rem .5rem;border-radius:999px;border:1px solid #e1bee7}
 .meta{font-size:.85rem;color:#666}
-.actions{display:flex;gap:.6rem;margin-top:auto}
-.actions a{flex:0 0 auto;padding:.5rem .9rem;border-radius:8px;border:1px solid var(--brand);color:var(--brand);text-decoration:none;font-weight:600}
-.actions a:hover{background:var(--brand);color:#fff}
-
+/* replace your current .actions + .actions a */
+.actions{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: .6rem;
+}
+.actions a{
+  display:block;            /* lets the grid stretch the whole button */
+  text-align:center;
+  padding:.55rem .9rem;
+}
+.actions a{background:var(--brand);color:#fff;text-decoration:none;border-radius:8px;font-weight:600}
+.actions a:hover{background:#4a148c}
 /* Experience */
 .experience{background:#fafafa;border-radius:10px;padding:1rem;margin-bottom:1rem;border:1px solid #eee}
 
