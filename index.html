@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sam Miller | Cybersecurity & InfoSec</title>
 
   <style>
@@ -14,278 +14,246 @@
     }
 
     /* Base */
-    body { font-family: 'Roboto', sans-serif; margin: 0; background: #f9f9f9; color: #2c2c2c; line-height: 1.8; }
-    header { background: #f5f5f5; color: var(--brand); padding: 4rem 2rem; text-align: center; position: relative; z-index: 1000; }
-    nav { background: #eeeeee; text-align: center; padding: 1rem 0; position: sticky; top: 0; z-index: 999; }
-    nav a { color: #333; margin: 0 2rem; text-decoration: none; font-weight: 700; }
-    nav a:hover { color: #ab47bc; text-decoration: underline; }
-    section { padding: 3rem 2rem; max-width: var(--container); margin: auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,.04); margin-bottom: 2.5rem; }
-    h2 { font-size: 2.2rem; color: var(--brand); border-bottom: 2px solid #ccc; padding-bottom: .5rem; margin-bottom: 1.5rem; }
-    p { margin: 0 0 1rem; }
-    strong { font-weight: 600; color: #444; }
+    body{font-family:'Roboto',sans-serif;margin:0;background:#f9f9f9;color:#2c2c2c;line-height:1.8}
+    header{background:#f5f5f5;color:var(--brand);padding:4rem 2rem;text-align:center;position:relative;z-index:1}
+    nav{background:#eeeeee;text-align:center;padding:1rem 0;position:sticky;top:0;z-index:2}
+    nav a{color:#333;margin:0 2rem;text-decoration:none;font-weight:700}
+    nav a:hover{color:#ab47bc;text-decoration:underline}
+    section{padding:3rem 2rem;max-width:var(--container);margin:auto;background:#fff;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.04);margin-bottom:2.5rem}
+    h2{font-size:2.2rem;color:var(--brand);border-bottom:2px solid #ccc;padding-bottom:.5rem;margin-bottom:1.5rem}
+    p{margin:0 0 1rem}
+    strong{font-weight:600;color:#444}
 
     /* Projects */
-    .filterbar { display: flex; flex-wrap: wrap; gap: .5rem; margin: -.5rem 0 1rem; }
-    .filterbar button { border: 1px solid #ccc; background: #faf7fc; color: var(--brand); border-radius: 999px; padding: .35rem .7rem; font-size: .85rem; cursor: pointer; }
-    .filterbar button.active { background: var(--brand); color: #fff; border-color: var(--brand); }
-
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.2rem; justify-content: center; align-items: stretch; }
-    .card { background: transparent; border: none; box-shadow: none; border-radius: 0; display: flex; flex-direction: column; padding: 1rem 0; height: 100%; }
-    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; display: block; }
-    .card-body { padding: 1rem 0 0; flex: 1; }
-    .card h3 { margin: 0 0 .25rem; color: var(--brand); font-size: 1.1rem; }
-    .card p { margin: .25rem 0 .75rem; font-size: .95rem; color: #333; }
-    .chips { display: flex; flex-wrap: wrap; gap: .4rem; margin: .25rem 0 .75rem; }
-    .chips span { font-size: .8rem; background: #f3e5f5; color: var(--brand); padding: .25rem .5rem; border-radius: 999px; border: 1px solid #e1bee7; }
-    .meta { font-size: .85rem; color: #666; margin-bottom: .75rem; }
-    .actions { display: flex; gap: .6rem; margin-top: .75rem; }
-    .actions a { flex: 1; text-align: center; font-weight: 600; text-decoration: none; padding: .55rem .7rem; border-radius: 8px; border: 1px solid var(--brand); color: var(--brand); background: #fff; }
-    .actions a:hover { background: var(--brand); color: #fff; }
+    .filterbar{display:flex;flex-wrap:wrap;gap:.5rem;margin:-.5rem 0 1rem}
+    .filterbar button{border:1px solid #ccc;background:#faf7fc;color:var(--brand);border-radius:999px;padding:.35rem .7rem;font-size:.85rem;cursor:pointer}
+    .filterbar button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.2rem;justify-content:center;align-items:stretch}
+    .card{background:transparent;border:none;box-shadow:none;border-radius:0;display:flex;flex-direction:column;padding:1rem 0;height:100%}
+    .card img{width:100%;height:200px;object-fit:cover;border-radius:8px;display:block}
+    .card-body{padding:1rem 0 0;flex:1}
+    .card h3{margin:0 0 .25rem;color:var(--brand);font-size:1.1rem}
+    .card p{margin:.25rem 0 .75rem;font-size:.95rem;color:#333}
+    .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.25rem 0 .75rem}
+    .chips span{font-size:.8rem;background:#f3e5f5;color:var(--brand);padding:.25rem .5rem;border-radius:999px;border:1px solid #e1bee7}
+    .meta{font-size:.85rem;color:#666;margin-bottom:.75rem}
+    .actions{display:flex;gap:.6rem;margin-top:.75rem}
+    .actions a{flex:1;text-align:center;font-weight:600;text-decoration:none;padding:.55rem .7rem;border-radius:8px;border:1px solid var(--brand);color:var(--brand);background:#fff}
+    .actions a:hover{background:var(--brand);color:#fff}
 
     /* Experience */
-    .experience { background: #fafafa; border-radius: 8px; padding: 1.2rem 1rem; box-shadow: 0 2px 8px rgba(0,0,0,.05); margin-bottom: 2rem; }
+    .experience{background:#fafafa;border-radius:8px;padding:1.2rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:2rem}
 
     /* Footer */
-    footer { text-align: center; padding: 1.5rem 0; background: #f5f5f5; color: #666; font-size: .9rem; }
-  /* Contact Sidebar */
-  .contact-toggle{
-    position:fixed;left:16px;bottom:20px;z-index:1001;
-    border:1px solid var(--brand);color:var(--brand);background:#fff;
-    border-radius:999px;padding:.55rem .9rem;cursor:pointer;font-weight:700
-  }
-  .contact-toggle:focus{outline:2px solid var(--brand)}
+    footer{text-align:center;padding:1.5rem 0;background:#f5f5f5;color:#666;font-size:.9rem}
 
-  .contact-sidebar{
-    position:fixed;top:0;left:0;width:var(--sidebar-w);height:100dvh;
-    background:#fff;border-right:1px solid #ddd;box-shadow:2px 0 16px rgba(0,0,0,.08);
-    transform:translateX(-100%);transition:transform .25s ease;z-index:1002;
-    display:flex;flex-direction:column;gap:.75rem;padding:1rem 1rem 1.25rem;
-    overflow-y:auto; /* allow scroll */
-    padding-bottom:calc(env(safe-area-inset-bottom,0px) + 16px); /* keep button clear */
-  }
-  .contact-sidebar.open{transform:translateX(0)}
-  .contact-sidebar h3{margin:.25rem 0 .5rem;color:var(--brand)}
-  .contact-sidebar a{display:block;padding:.5rem .4rem;border-radius:8px;color:var(--brand);text-decoration:none}
-  .contact-sidebar a:hover{background:#f6eefb}
+    /* Contact Sidebar */
+    .contact-toggle{
+      position:fixed;left:16px;bottom:20px;z-index:1001;
+      border:1px solid var(--brand);color:var(--brand);background:#fff;
+      border-radius:999px;padding:.55rem .9rem;cursor:pointer;font-weight:700
+    }
+    .contact-toggle:focus{outline:2px solid var(--brand)}
 
-  .contact-overlay{
-    position:fixed;inset:0;background:rgba(0,0,0,.25);
-    opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:1000
-  }
-  .contact-overlay.show{opacity:1;pointer-events:auto}
+    .contact-sidebar{
+      position:fixed;top:0;left:0;width:var(--sidebar-w);height:100dvh;
+      background:#fff;border-right:1px solid #ddd;box-shadow:2px 0 16px rgba(0,0,0,.08);
+      transform:translateX(-100%);transition:transform .25s ease;z-index:1002;
+      display:flex;flex-direction:column;gap:.75rem;padding:1rem 1rem 1.25rem;
+      overflow-y:auto;
+      padding-bottom:calc(env(safe-area-inset-bottom,0px) + 16px);
+    }
+    .contact-sidebar.open{transform:translateX(0)}
+    .contact-sidebar h3{margin:.25rem 0 .5rem;color:var(--brand)}
+    .contact-sidebar a{display:block;padding:.5rem .4rem;border-radius:8px;color:var(--brand);text-decoration:none}
+    .contact-sidebar a:hover{background:#f6eefb}
 
-/* Close button */
-.close-btn{
-  margin-top:auto;position:sticky;bottom:0;display:block;width:100%;
-  background:#fff;border:1px solid var(--brand);color:var(--brand);
-  border-radius:8px;padding:.55rem .9rem;font-weight:600;text-align:center
-}
-.close-btn:hover{background:var(--brand);color:#fff}
-.close-btn:focus{outline:2px solid var(--brand)}
+    .contact-overlay{
+      position:fixed;inset:0;background:rgba(0,0,0,.25);
+      opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:1000
+    }
+    .contact-overlay.show{opacity:1;pointer-events:auto}
 
+    .close-btn{
+      margin-top:auto;position:sticky;bottom:0;display:block;width:100%;
+      background:#fff;border:1px solid var(--brand);color:var(--brand);
+      border-radius:8px;padding:.55rem .9rem;font-weight:600;text-align:center
+    }
+    .close-btn:hover{background:var(--brand);color:#fff}
+    .close-btn:focus{outline:2px solid var(--brand)}
+
+    @media (max-width:768px){
+      nav a{margin:0 1rem}
+      .projects-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    }
   </style>
-<!-- Contact Sidebar -->
-<button id="contactOpen" class="contact-toggle" type="button"
-        aria-controls="contactSidebar" aria-expanded="false">Contact</button>
 
-<div id="contactOverlay" class="contact-overlay"></div>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-<aside id="contactSidebar" class="contact-sidebar" role="dialog"
-       aria-modal="true" aria-labelledby="contactTitle" tabindex="-1">
-  <h3 id="contactTitle">Contact Me</h3>
-  <a href="mailto:SJ.Miller2k@gmail.com">📧 Email</a>
-  <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank" rel="noopener">🔗 LinkedIn</a>
-  <a href="https://github.com/smill257" target="_blank" rel="noopener">💻 GitHub</a>
-  <a href="https://github.com/smill257/Portfolio/raw/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" rel="noopener" download>📄 Resume</a>
-  <button id="contactClose" class="close-btn" type="button">Close</button>
-</aside>
+  <header>
+    <h1>Sam Miller</h1>
+    <p>Information Security & Assurance | BBA - ISA, Kennesaw State University</p>
+  </header>
 
-<script>
-(function(){
-  const openBtn  = document.getElementById('contactOpen');
-  const closeBtn = document.getElementById('contactClose');
-  const sidebar  = document.getElementById('contactSidebar');
-  const overlay  = document.getElementById('contactOverlay');
-  if (!openBtn || !closeBtn || !sidebar || !overlay) return;
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+  </nav>
 
-  function openPanel(){
-    sidebar.classList.add('open');
-    overlay.classList.add('show');
-    openBtn.setAttribute('aria-expanded','true');
-    sidebar.focus();
-    document.body.style.overflow = 'hidden';
-  }
-  function closePanel(){
-    sidebar.classList.remove('open');
-    overlay.classList.remove('show');
-    openBtn.setAttribute('aria-expanded','false');
-    openBtn.focus();
-    document.body.style.overflow = '';
-  }
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Information Security & Assurance student at KSU focusing on network security, ethical hacking, risk management, and compliance. Honors GPA. President’s and Dean’s List.</p>
+    <p><strong>Certifications:</strong> Python Bootcamp (Udemy), Cybersecurity (Cisco Networking Academy), Intro to Cloud Security (Simplilearn), Precinct Certified User (WitFoo)</p>
+    <p><strong>Skills:</strong> Python, Java, C++, HTML, SQL, Power BI, Tableau, Excel, Wireshark, Linux, AWS, Azure, Risk Assessment, Public Speaking, Leadership</p>
+  </section>
 
-  openBtn.addEventListener('click', openPanel);
-  closeBtn.addEventListener('click', closePanel);
-  overlay.addEventListener('click', closePanel);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
-})();
-</script>
+  <section id="projects">
+    <h2>Projects</h2>
 
-<footer>
-  <p>&copy; 2025 Sam Miller. All rights reserved.</p>
-</footer>
+    <div class="filterbar" id="filters">
+      <button type="button" data-tag="all" class="active">All</button>
+      <button type="button" data-tag="python">Python</button>
+      <button type="button" data-tag="cloud">AWS</button>
+      <button type="button" data-tag="java">Java</button>
+    </div>
 
-<script>
-/* project filter ... unchanged ... */
-</script>
-
-
-<header>
-  <h1>Sam Miller</h1>
-  <p>Information Security & Assurance | BBA - ISA, Kennesaw State University</p>
-</header>
-
-<nav>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#experience">Experience</a>
-</nav>
-
-<section id="about">
-  <h2>About Me</h2>
-  <p>Information Security & Assurance Student at KSU who is embarking on the dynamic and highly relevant field of study. Throughout my academic journey, I've pursued various aspects of information security, such as network security, ethical hacking, risk management, and compliance. At the same time, maintaining an honors GPA and achieving academic awards such as the president's and dean's lists.</p>
-  <p><strong>Certifications:</strong> Python Bootcamp (Udemy), Cybersecurity (Cisco Networking Academy), Intro to Cloud Security (Simplilearn), Precinct Certified User (WitFoo)</p>
-  <p><strong>Skills:</strong> Python, Java, C++, HTML, SQL, Power BI, Tableau, Excel, Wireshark, Linux, AWS, Azure, Risk Assessment, Public Speaking, Leadership</p>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="filterbar" id="filters">
-    <button type="button" data-tag="all" class="active">All</button>
-    <button type="button" data-tag="python">Python</button>
-    <button type="button" data-tag="cloud">AWS</button>
-    <button type="button" data-tag="java">Java</button>
-  </div>
-
-  <div class="projects-grid" id="grid">
-    <article class="card" data-tags="python security">
-      <img src="https://dummyimage.com/800x450/ded/6a1b9a&text=Crypto+Tool" alt="CLI encryption tool" loading="lazy">
-      <div class="card-body">
-        <h3>Custom Encryption/Decryption Tool</h3>
-        <p>Hex decode, bitwise ops, SHA-256 hashing. Focus on secure handling and testable modules.</p>
-        <div class="chips"><span>Python</span><span>Cryptography</span><span>CLI</span></div>
-        <div class="meta">Purpose: Enhance data security and integrity.</div>
-        <div class="actions"><a href="https://github.com/smill257/Course-Projects/blob/main/Hash-Decrypter-Project.py" target="_blank" rel="noopener">Code</a></div>
-      </div>
-    </article>
-
-    <article class="card" data-tags="cloud security">
-      <img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" alt="AWS Architecture" loading="lazy">
-      <div class="card-body">
-        <h3>AWS Cloud Security Architecture</h3>
-        <p>Multi-AZ design with IAM least-privilege, S3 encryption, CloudWatch alerts, DR patterns.</p>
-        <div class="chips"><span>AWS</span><span>IAM</span><span>S3</span></div>
-        <div class="meta">Purpose: Secure cloud infrastructure.</div>
-        <div class="actions">
-          <a href="https://github.com/smill257/Portfolio" target="_blank">Code</a>
-          <a href="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" target="_blank">Diagram</a>
+    <div class="projects-grid" id="grid">
+      <article class="card" data-tags="python security">
+        <img src="https://dummyimage.com/800x450/ded/6a1b9a&text=Crypto+Tool" alt="CLI encryption tool" loading="lazy">
+        <div class="card-body">
+          <h3>Custom Encryption/Decryption Tool</h3>
+          <p>Hex decode, bitwise ops, SHA-256 hashing. Secure handling and testable modules.</p>
+          <div class="chips"><span>Python</span><span>Cryptography</span><span>CLI</span></div>
+          <div class="meta">Purpose: Enhance data security and integrity.</div>
+          <div class="actions">
+            <a href="https://github.com/smill257/Course-Projects/blob/main/Hash-Decrypter-Project.py" target="_blank" rel="noopener">Code</a>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <article class="card" data-tags="python">
-      <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png" alt="VIN Decoder screenshot" loading="lazy">
-      <div class="card-body">
-        <h3>Smart VIN Decoder</h3>
-        <p>NHTSA API client with caching and error handling. History view and idempotent lookups.</p>
-        <div class="chips"><span>Python</span><span>API</span><span>Caching</span></div>
-        <div class="meta">Purpose: Improve vehicle data accessibility.</div>
-        <div class="actions">
-          <a href="https://github.com/smill257/Smart-VIN-Decoder" target="_blank">Code</a>
-          <a href="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" target="_blank">Screenshot</a>
-          <a href="https://github.com/smill257/Smart-VIN-Decoder/blob/main/README.md" target="_blank">Readme</a>
+      <article class="card" data-tags="cloud security">
+        <img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" alt="AWS Architecture" loading="lazy">
+        <div class="card-body">
+          <h3>AWS Cloud Security Architecture</h3>
+          <p>Multi-AZ design with IAM least-privilege, S3 encryption, CloudWatch alerts, DR patterns.</p>
+          <div class="chips"><span>AWS</span><span>IAM</span><span>S3</span></div>
+          <div class="meta">Purpose: Secure cloud infrastructure.</div>
+          <div class="actions">
+            <a href="https://github.com/smill257/Portfolio" target="_blank" rel="noopener">Code</a>
+            <a href="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" target="_blank" rel="noopener">Diagram</a>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <article class="card" data-tags="java">
-      <img src="https://dummyimage.com/800x450/f3f3f3/6a1b9a&text=Java+Mini+Apps" alt="Java mini apps graphic" loading="lazy">
-      <div class="card-body">
-        <h3>Java Mini-Apps</h3>
-        <p>Array sorter, calculator, Connect Four with tests.</p>
-        <div class="chips"><span>Java</span><span>OOP</span><span>JUnit</span></div>
-        <div class="actions">
-          <a href="https://github.com/smill257/Course-Projects" target="_blank">Repo</a>
-          <a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank">Array Sorter</a>
-          <a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank">Calculator</a>
-          <a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four.java" target="_blank">Connect Four</a>
+      <article class="card" data-tags="python">
+        <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png" alt="VIN Decoder screenshot" loading="lazy">
+        <div class="card-body">
+          <h3>Smart VIN Decoder</h3>
+          <p>NHTSA API client with caching and robust error handling. History view and idempotent lookups.</p>
+          <div class="chips"><span>Python</span><span>API</span><span>Caching</span></div>
+          <div class="meta">Purpose: Improve vehicle data accessibility.</div>
+          <div class="actions">
+            <a href="https://github.com/smill257/Smart-VIN-Decoder" target="_blank" rel="noopener">Code</a>
+            <a href="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" target="_blank" rel="noopener">Screenshot</a>
+            <a href="https://github.com/smill257/Smart-VIN-Decoder/blob/main/README.md" target="_blank" rel="noopener">Readme</a>
+          </div>
         </div>
-      </div>
-    </article>
-  </div>
-</section>
+      </article>
 
-<section id="experience">
-  <h2>Experience & Involvement</h2>
-  <div class="experience"><h3>Merit</h3><p>Multiple time recipient of President's list (4.00 GPA), Dean's list (3.80+ GPA)throughout college career.</p></div>
-  <div class="experience"><h3>Upsilon Pi Epsilon (UPE)</h3><p>Member of the international computing honor society.</p></div>
-  <div class="experience"><h3>Business Technology Association (BTA)</h3><p>Active member collaborating on emerging technologies.</p></div>
-  <div class="experience"><h3>National Honor Society (NHS)</h3><p>Maintains high academic standing and contributes to service-based leadership initiatives.</p></div>
-</section>
+      <article class="card" data-tags="java">
+        <img src="https://dummyimage.com/800x450/f3f3f3/6a1b9a&text=Java+Mini+Apps" alt="Java mini apps graphic" loading="lazy">
+        <div class="card-body">
+          <h3>Java Mini-Apps</h3>
+          <p>Array sorter, calculator, Connect Four with tests.</p>
+          <div class="chips"><span>Java</span><span>OOP</span><span>JUnit</span></div>
+          <div class="actions">
+            <a href="https://github.com/smill257/Course-Projects" target="_blank" rel="noopener">Repo</a>
+            <a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank" rel="noopener">Array Sorter</a>
+            <a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank" rel="noopener">Calculator</a>
+            <a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four.java" target="_blank" rel="noopener">Connect Four</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-<!-- Contact Sidebar -->
-<script>
-(function(){
-  const openBtn  = document.getElementById('contactOpen');
-  const closeBtn = document.getElementById('contactClose');
-  const sidebar  = document.getElementById('contactSidebar');
-  const overlay  = document.getElementById('contactOverlay');
+  <section id="experience">
+    <h2>Experience & Involvement</h2>
+    <div class="experience"><h3>Merit</h3><p>President's List (4.00 GPA) and Dean's List (3.80+ GPA).</p></div>
+    <div class="experience"><h3>Upsilon Pi Epsilon (UPE)</h3><p>International computing honor society member.</p></div>
+    <div class="experience"><h3>Business Technology Association (BTA)</h3><p>Focus on emerging technologies and cybersecurity.</p></div>
+    <div class="experience"><h3>National Honor Society (NHS)</h3><p>Service-based leadership with high academic standing.</p></div>
+  </section>
 
-  if (!openBtn || !closeBtn || !sidebar || !overlay) {
-    console.error('Contact sidebar: missing element(s).');
-    return;
-  }
+  <!-- Contact Sidebar -->
+  <button id="contactOpen" class="contact-toggle" type="button"
+          aria-controls="contactSidebar" aria-expanded="false">Contact</button>
 
-  function openPanel(){
-    sidebar.classList.add('open');
-    overlay.classList.add('show');
-    openBtn.setAttribute('aria-expanded','true');
-    sidebar.focus();
-    document.body.style.overflow = 'hidden';
-  }
-  function closePanel(){
-    sidebar.classList.remove('open');
-    overlay.classList.remove('show');
-    openBtn.setAttribute('aria-expanded','false');
-    openBtn.focus();
-    document.body.style.overflow = '';
-  }
+  <div id="contactOverlay" class="contact-overlay"></div>
 
-  openBtn.addEventListener('click', openPanel);
-  closeBtn.addEventListener('click', closePanel);
-  overlay.addEventListener('click', closePanel);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
-})();
-</script>
-</script>
+  <aside id="contactSidebar" class="contact-sidebar" role="dialog"
+         aria-modal="true" aria-labelledby="contactTitle" tabindex="-1">
+    <h3 id="contactTitle">Contact Me</h3>
+    <a href="mailto:SJ.Miller2k@gmail.com">📧 Email</a>
+    <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+    <a href="https://github.com/smill257" target="_blank" rel="noopener">💻 GitHub</a>
+    <a href="https://github.com/smill257/Portfolio/raw/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" rel="noopener" download>📄 Resume</a>
+    <button id="contactClose" class="close-btn" type="button">Close</button>
+  </aside>
 
+  <script>
+  // Contact sidebar logic
+  (function(){
+    const openBtn  = document.getElementById('contactOpen');
+    const closeBtn = document.getElementById('contactClose');
+    const sidebar  = document.getElementById('contactSidebar');
+    const overlay  = document.getElementById('contactOverlay');
+    if (!openBtn || !closeBtn || !sidebar || !overlay) return;
 
-<footer>
-  <p>&copy; 2025 Sam Miller. All rights reserved.</p>
-</footer>
+    function openPanel(){
+      sidebar.classList.add('open');
+      overlay.classList.add('show');
+      openBtn.setAttribute('aria-expanded','true');
+      sidebar.focus();
+      document.body.style.overflow = 'hidden';
+    }
+    function closePanel(){
+      sidebar.classList.remove('open');
+      overlay.classList.remove('show');
+      openBtn.setAttribute('aria-expanded','false');
+      openBtn.focus();
+      document.body.style.overflow = '';
+    }
 
-<script>
+    openBtn.addEventListener('click', openPanel);
+    closeBtn.addEventListener('click', closePanel);
+    overlay.addEventListener('click', closePanel);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+  })();
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Sam Miller. All rights reserved.</p>
+  </footer>
+
+  <script>
   // Project filter
-  const grid=document.getElementById('grid');
-  const btns=[...document.querySelectorAll('#filters button')];
-  btns.forEach(b=>b.addEventListener('click',()=>{
-    btns.forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');
-    const tag=b.dataset.tag;
-    [...grid.children].forEach(card=>{
-      card.style.display=(tag==='all'||card.dataset.tags.includes(tag))?'flex':'none';
-    });
-  }));
-</script>
+  (function(){
+    const grid = document.getElementById('grid');
+    const btns = [...document.querySelectorAll('#filters button')];
+    btns.forEach(b => b.addEventListener('click', () => {
+      btns.forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const tag = b.dataset.tag;
+      [...grid.children].forEach(card => {
+        card.style.display = (tag === 'all' || card.dataset.tags.includes(tag)) ? 'flex' : 'none';
+      });
+    }));
+  })();
+  </script>
 
 </body>
 </html>
