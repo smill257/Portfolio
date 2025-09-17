@@ -24,7 +24,12 @@ header{
     center/cover no-repeat;
   z-index: 1000;
 }
-
+.header-content {
+  display: inline-block;
+  background: rgba(0,0,0,0.55); /* translucent black background */
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
 
 /* Base */
 *{box-sizing:border-box}
@@ -126,9 +131,12 @@ footer{text-align:center;color:#666;background:#f5f5f5;padding:1.25rem;margin-to
 </aside>
 
 <header>
-  <h1>Sam Miller</h1>
-  <p>Information Security & Assurance | BBA - ISA, Kennesaw State University</p>
+  <div class="header-content">
+    <h1>Sam Miller</h1>
+    <p>Information Security & Assurance | BBA - ISA, Kennesaw State University</p>
+  </div>
 </header>
+
 
 <nav>
   <a href="#about">About</a>
