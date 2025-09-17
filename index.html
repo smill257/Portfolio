@@ -11,23 +11,20 @@
   --sidebar-w:280px;
   --brand:#6a1b9a;
 }
-header {
-  background: url('https://github.com/smill257/Portfolio/blob/main/Banner%20unsplash.jpg') center/cover no-repeat;
-  color: #fff; /* makes text stand out on the banner */
-  padding: 6rem 2rem; /* taller padding for banner feel */
-  text-align: center;
+/* Header with banner + overlay (single rule) */
+header{
   position: relative;
+  padding: 6rem 2rem;
+  text-align: center;
+  color:#fff;
+  /* overlay + image in one line */
+  background:
+    linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+    url('https://raw.githubusercontent.com/smill257/Portfolio/main/Banner%20unsplash.jpg')
+    center/cover no-repeat;
   z-index: 1000;
 }
 
-/* Optional overlay for readability */
-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4); /* dark overlay */
-  z-index: -1;
-}
 
 /* Base */
 *{box-sizing:border-box}
@@ -75,7 +72,8 @@ h2{font-size:2rem;color:var(--brand);border-bottom:2px solid #e6e6e6;padding-bot
 }
 
 .actions a{background:var(--brand);color:#fff;text-decoration:none;border-radius:8px;font-weight:600}
-.actions a:hover{background:#f3e5f5`;color:var(--brand)}
+.actions a:hover{ background:#f3e5f5; color:var(--brand); }
+
 /* Experience */
 .experience{background:#fafafa;border-radius:10px;padding:1rem;margin-bottom:1rem;border:1px solid #eee}
 
