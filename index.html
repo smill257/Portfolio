@@ -11,6 +11,23 @@
   --sidebar-w:280px;
   --brand:#6a1b9a;
 }
+header {
+  background: url('https://github.com/smill257/Portfolio/blob/main/Banner%20unsplash.jpg') center/cover no-repeat;
+  color: #fff; /* makes text stand out on the banner */
+  padding: 6rem 2rem; /* taller padding for banner feel */
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Optional overlay for readability */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* dark overlay */
+  z-index: -1;
+}
 
 /* Base */
 *{box-sizing:border-box}
