@@ -43,29 +43,37 @@ if(d20Button&&d20Number&&d20Result&&d20Connect){
  let numberTimer;
  let clickCount=0;
  d20Button.addEventListener('click',()=>{
+  if(d20Button.classList.contains('is-rolling'))return;
   clearTimeout(rollTimer);
   clearInterval(numberTimer);
-  d20Button.classList.remove('is-rolling');
-  void d20Button.offsetWidth;
+  const rollResult=1+Math.floor(Math.random()*20);
   const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const mobile=window.matchMedia('(max-width: 620px)').matches;
   const duration=reducedMotion?360:mobile?620:1020;
-  const tick=reducedMotion?120:mobile?100:58;
+  const tick=mobile?100:58;
   d20Button.classList.add('is-rolling');
+  d20Button.setAttribute('aria-busy','true');
   clickCount=(clickCount+1)%4;
-  if(clickCount===0){
-   d20Result.textContent='Roll for initiative.';
-  }else if(clickCount===3){
-   d20Result.textContent='Secret door found.';
-  }else{
-   d20Result.textContent='Natural 20. Nice.';
+  d20Result.textContent='Rolling...';
+  d20Connect.hidden=true;
+  if(!reducedMotion){
+   numberTimer=setInterval(()=>{d20Number.textContent=String(1+Math.floor(Math.random()*20));},tick);
   }
-  d20Connect.hidden=clickCount!==3;
-  numberTimer=setInterval(()=>{d20Number.textContent=String(1+Math.floor(Math.random()*20));},tick);
   rollTimer=setTimeout(()=>{
    clearInterval(numberTimer);
-   d20Number.textContent='20';
+   d20Number.textContent=String(rollResult);
    d20Button.classList.remove('is-rolling');
+   d20Button.setAttribute('aria-busy','false');
+   if(clickCount===3){
+    d20Result.textContent=`Rolled ${rollResult}. Secret door found.`;
+   }else if(rollResult===20){
+    d20Result.textContent='Natural 20. Nice.';
+   }else if(rollResult===1){
+    d20Result.textContent='Natural 1. Happens.';
+   }else{
+    d20Result.textContent=`Rolled ${rollResult}.`;
+   }
+   d20Connect.hidden=clickCount!==3;
   },duration);
  });
  d20Button.disabled=false;

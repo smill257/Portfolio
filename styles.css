@@ -200,8 +200,9 @@ h1 { margin: 0 0 13px; font-size: clamp(3.7rem, 7vw, 6.5rem); font-weight: 760; 
 .d20-roll:hover { border-color: #66504d; background: #201d20; }
 .d20-roll:hover .d20, .d20-roll:focus-visible .d20 { transform: rotate(5deg); }
 .d20-roll:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+.d20-roll[aria-busy="true"] { cursor: progress; }
 .d20-roll:disabled { cursor: default; opacity: .75; }
-.d20-message { max-width: 190px; min-height: 3.6em; margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.35; }
+.d20-message { max-width: 190px; min-height: 4.7em; margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.35; }
 .d20-connect { display: inline-block; min-height: 36px; padding-top: 5px; color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
 .d20-connect[hidden] { display: none; }
 .d20 { width: 75px; height: 75px; overflow: visible; color: var(--red); transform-origin: center; transition: transform .18s ease; }
@@ -307,7 +308,7 @@ footer a { min-height: 42px; display: flex; align-items: center; }
   .d20 { width: 64px; height: 64px; }
   .d20-roll { width: 70px; height: 70px; }
   .d20-wrap { width: 100px; }
-  .d20-message { min-height: 5.4em; }
+  .d20-message { min-height: 7.2em; }
   .d20-roll.is-rolling .d20 { animation: d20-roll-mobile .62s ease-out; }
   @keyframes d20-roll-mobile {
     0% { transform: rotate(0deg); }

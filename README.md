@@ -24,3 +24,7 @@ The résumé, capstone PDFs, screenshots, and tool icons are kept in `assets/` a
 Professional summaries focus on AppSec automation, API integrations, security data organization, scanner triage, and developer support. Core AppSec tools are distinguished from broader tool familiarity. Academic projects and the home lab are identified as such.
 
 The Smart VIN Decoder description reflects its public implementation: basic input checks, NHTSA API requests, JSON parsing, and session-only in-memory history. It does not claim persistent storage, full-response caching, or comprehensive network error handling.
+
+## Dice interaction
+
+The D20 lands on a random value from 1 through 20. Its result is announced after the animation, and the third completed roll reveals a LinkedIn link. Rapid clicks during a roll are ignored. Reduced-motion mode skips the number shuffle.
