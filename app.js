@@ -37,9 +37,11 @@ document.querySelectorAll('[data-tool-link]').forEach(link=>{
 const d20Button=document.getElementById('d20-roll');
 const d20Number=document.getElementById('d20-number');
 const d20Result=document.getElementById('d20-result');
-if(d20Button&&d20Number&&d20Result){
+const d20Connect=document.getElementById('d20-connect');
+if(d20Button&&d20Number&&d20Result&&d20Connect){
  let rollTimer;
  let numberTimer;
+ let clickCount=0;
  d20Button.addEventListener('click',()=>{
   clearTimeout(rollTimer);
   clearInterval(numberTimer);
@@ -49,14 +51,13 @@ if(d20Button&&d20Number&&d20Result){
   const duration=reducedMotion?660:1020;
   const tick=reducedMotion?130:58;
   d20Button.classList.add('is-rolling');
-  d20Result.textContent='';
-  numberTimer=setInterval(()=>{
-   d20Number.textContent=String(1+Math.floor(Math.random()*20));
-  },tick);
+  clickCount=(clickCount+1)%3;
+  d20Result.textContent=clickCount===0?'Secret door found.':'Always a nat 20 with my work.';
+  d20Connect.hidden=clickCount!==0;
+  numberTimer=setInterval(()=>{d20Number.textContent=String(1+Math.floor(Math.random()*20));},tick);
   rollTimer=setTimeout(()=>{
    clearInterval(numberTimer);
    d20Number.textContent='20';
-   d20Result.textContent='20';
    d20Button.classList.remove('is-rolling');
   },duration);
  });
