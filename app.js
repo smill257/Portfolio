@@ -48,8 +48,9 @@ if(d20Button&&d20Number&&d20Result&&d20Connect){
   d20Button.classList.remove('is-rolling');
   void d20Button.offsetWidth;
   const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const duration=reducedMotion?660:1020;
-  const tick=reducedMotion?130:58;
+  const mobile=window.matchMedia('(max-width: 620px)').matches;
+  const duration=reducedMotion?360:mobile?620:1020;
+  const tick=reducedMotion?120:mobile?100:58;
   d20Button.classList.add('is-rolling');
   clickCount=(clickCount+1)%4;
   if(clickCount===0){

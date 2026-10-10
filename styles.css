@@ -39,6 +39,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid #ffd0c9; outline-offs
 h1 { margin: 0 0 13px; font-size: clamp(3.7rem, 7vw, 6.5rem); font-weight: 760; letter-spacing: -.085em; line-height: .98; }
 .hero-role { margin-bottom: 21px; color: var(--muted); font-size: .97rem; }
 .hero-role span { color: var(--red); padding-inline: 3px; }
+.hero-connect { display: inline-flex; align-items: center; min-height: 42px; margin-left: 9px; color: var(--red); font-size: .88rem; font-weight: 650; text-decoration: underline; text-decoration-color: #8f514b; text-underline-offset: 4px; }
+.hero-connect:hover { color: #ffaaa0; }
 .hero-description { max-width: 475px; font-size: 1.2rem; line-height: 1.5; }
 .hero-support { max-width: 455px; margin-top: 12px; color: var(--muted); font-size: .96rem; line-height: 1.55; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; margin-top: 25px; }
@@ -328,6 +330,12 @@ footer a { min-height: 42px; display: flex; align-items: center; }
   .d20 { width: 64px; height: 64px; }
   .d20-roll { width: 70px; height: 70px; }
   .d20-wrap { flex-basis: 130px; }
+  .d20-roll.is-rolling .d20 { animation: d20-roll-mobile .62s ease-out; }
+  @keyframes d20-roll-mobile {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg) scale(1.02); }
+    100% { transform: rotate(360deg); }
+  }
 
 
   .contact-section { grid-template-columns: 1fr; gap: 10px; padding-block: 30px; }
