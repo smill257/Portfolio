@@ -57,8 +57,14 @@
       {
         "@type": "CreativeWork",
         "name": "Server Security Capstone",
-        "url": "https://github.com/smill257/Portfolio/blob/main/4220_Vulnerability_Assessment_smill257_v8.pdf",
+        "url": "https://sammiller.netlify.app/assets/4220_Vulnerability_Assessment_smill257_v8.pdf",
         "description": "Cybersecurity bachelor's capstone exploring vulnerability assessment and server hardening."
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Incident Response Plan Capstone",
+        "url": "https://sammiller.netlify.app/assets/cyber-defense-capstone-reflection.pdf",
+        "description": "Semester-long student team capstone led by Sam Miller as Incident Response Manager. The team developed and tabletop-tested an incident response plan for a fictional organization."
       }
     ]
   }
