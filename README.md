@@ -18,3 +18,9 @@ Capstone projects are academic coursework. The Cyber Defense capstone uses a fic
 ## Site files
 
 The résumé, capstone PDFs, screenshots, and tool icons are kept in `assets/` and linked from the site. The previous portfolio is preserved in `archive/old-portfolio-2026-10-09/` for sentimental reasons.
+
+## Content accuracy
+
+Professional summaries focus on AppSec automation, API integrations, security data organization, scanner triage, and developer support. Core AppSec tools are distinguished from broader tool familiarity. Academic projects and the home lab are identified as such.
+
+The Smart VIN Decoder description reflects its public implementation: basic input checks, NHTSA API requests, JSON parsing, and session-only in-memory history. It does not claim persistent storage, full-response caching, or comprehensive network error handling.

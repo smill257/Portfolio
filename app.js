@@ -5,8 +5,8 @@ const toolNotes=Object.freeze({
  python:{name:'Python',use:'API integrations, data processing, reporting, and automation.',where:'Repository and pipeline inventory, security metrics, and repeatable AppSec workflows.'},
  graphql:{name:'GraphQL',use:'My main API query language.',where:'Gathering repository, pipeline, scanner, and finding data for AppSec reporting.'},
  gitlab:{name:'GitLab',use:'Scanner setup, pipeline data, and security API workflows.',where:'Supporting the Snyk-to-GitLab change, security reporting, and developer-facing processes.'},
- snyk:{name:'Snyk',use:'API access to vulnerability and dependency data.',where:'Reporting and analysis during the security tooling change.'},
- postgresql:{name:'PostgreSQL',use:'Structured exception and due-date tracking.',where:'A database behind scheduled follow-up for security exceptions.'},
+ snyk:{name:'Snyk',use:'API access to vulnerability and dependency data.',where:'AppSec reporting and analysis, including support for the Snyk-to-GitLab migration.'},
+ postgresql:{name:'PostgreSQL',use:'Storing exception records and tracking due dates.',where:'The database behind my Python jobs for scheduled exception follow-up.'},
  elastic:{name:'Elastic Stack',use:'Familiarity with Elastic Stack (ELK).',where:'Part of the broader set of security tools I know.'},
  googlecloud:{name:'Google Cloud',use:'Writing SQL in BigQuery.',where:'My Google Cloud experience includes querying data with BigQuery.'},
  putty:{name:'PuTTY',use:'Familiarity with a remote-access tool.',where:'Part of my broader systems and security toolkit.'},
@@ -54,11 +54,11 @@ if(d20Button&&d20Number&&d20Result&&d20Connect){
   d20Button.classList.add('is-rolling');
   clickCount=(clickCount+1)%4;
   if(clickCount===0){
-   d20Result.textContent='Click me.';
+   d20Result.textContent='Roll for initiative.';
   }else if(clickCount===3){
    d20Result.textContent='Secret door found.';
   }else{
-   d20Result.textContent='Always a nat 20 with my work.';
+   d20Result.textContent='Natural 20. Nice.';
   }
   d20Connect.hidden=clickCount!==3;
   numberTimer=setInterval(()=>{d20Number.textContent=String(1+Math.floor(Math.random()*20));},tick);

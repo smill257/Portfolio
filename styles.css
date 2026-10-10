@@ -41,6 +41,7 @@ h1 { margin: 0 0 13px; font-size: clamp(3.7rem, 7vw, 6.5rem); font-weight: 760; 
 .hero-role span { color: var(--red); padding-inline: 3px; }
 .hero-description { max-width: 475px; font-size: 1.2rem; line-height: 1.5; }
 .hero-support { max-width: 455px; margin-top: 12px; color: var(--muted); font-size: .96rem; line-height: 1.55; }
+.hero-location { margin-top: 12px; color: var(--muted); font-size: .88rem; line-height: 1.5; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; margin-top: 25px; }
 .button { min-height: 46px; display: inline-flex; justify-content: center; align-items: center; padding: 10px 16px; font-size: .86rem; font-weight: 650; transition: background .16s ease, color .16s ease, border-color .16s ease; }
 .button-primary { border: 1px solid var(--red); background: var(--red); color: #201414; }
@@ -110,6 +111,8 @@ h1 { margin: 0 0 13px; font-size: clamp(3.7rem, 7vw, 6.5rem); font-weight: 760; 
 .tool-name { font-size: .86rem; font-weight: 600; line-height: 1.4; text-align: center; }
 .tool-button small { color: var(--muted); font-size: .73rem; line-height: 1.35; text-align: center; }
 .tool-detail { display: grid; grid-template-columns: minmax(145px, .72fr) 2fr; gap: 24px; min-height: 145px; margin: 18px 0 0; padding: 17px 20px; border: 1px solid #484045; border-left: 2px solid var(--red); background: #201d20; }
+.tool-familiar-label { margin: 19px 0 10px; color: var(--muted); font-size: .88rem; }
+.tool-grid-secondary .tool-button { min-height: 96px; }
 .tool-current { display: flex; flex-direction: column; gap: 5px; }
 .detail-label { color: var(--red); font: .66rem/1.5 var(--mono); letter-spacing: .035em; }
 .tool-current strong { font-size: 1.12rem; font-weight: 650; }
@@ -242,7 +245,8 @@ footer a { min-height: 42px; display: flex; align-items: center; }
   .hero-copy { max-width: 650px; }
   h1 { font-size: clamp(3.5rem, 10vw, 5.4rem); }
   .workflow { max-width: 650px; }
-  .tool-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+  .tool-grid { gap: 9px; }
+  .tool-grid li { flex-basis: calc((100% - 18px) / 3); }
   .tool-button { min-height: 105px; }
   .tool-section .section-heading { display: block; }
   .tool-section .section-heading > p:last-child:not(.eyebrow) { margin-top: 7px; }
@@ -280,6 +284,7 @@ footer a { min-height: 42px; display: flex; align-items: center; }
   .private-note-mark { margin-top: 6px; }
   .tool-section { padding-block: 44px 48px; }
   .tool-grid { gap: 7px; }
+  .tool-grid li { flex-basis: calc((100% - 14px) / 3); }
 
   .tool-button { min-height: 112px; padding: 10px 4px 13px; }
   .tool-name { font-size: .82rem; }

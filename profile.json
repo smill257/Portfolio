@@ -10,7 +10,7 @@
       "@type": "Place",
       "name": "Atlanta, Georgia"
     },
-    "description": "Application Security Analyst in Atlanta. I write Python, work with GraphQL and REST APIs, organize security data, automate AppSec workflows, interpret security findings, and partner with developers on remediation. I earned a B.B.A. in Information Security & Assurance from Kennesaw State University, graduating Magna Cum Laude, and took part in the USG Goes Global (USGG) study abroad experience in London in June and July 2024.",
+    "description": "Application Security Analyst based in Atlanta, open to relocation to New York City / Brooklyn. I write Python, work with GraphQL and REST APIs, organize security data, automate AppSec workflows, interpret security findings, and partner with developers on remediation. I earned a B.B.A. in Information Security & Assurance from Kennesaw State University, graduating Magna Cum Laude, and took part in the USG Goes Global (USGG) study abroad experience in London in June and July 2024.",
     "sameAs": [
       "https://github.com/smill257",
       "https://www.linkedin.com/in/booleanmethods/"
@@ -40,31 +40,34 @@
       "PostgreSQL",
       "Security automation",
       "Vulnerability assessment",
-      "Server hardening"
+      "Server hardening",
+      "Security data organization",
+      "Nmap",
+      "Greenbone"
     ],
     "subjectOf": [
       {
         "@type": "CreativeWork",
         "name": "Smart VIN Decoder",
         "url": "https://github.com/ksu-is/Smart-VIN-Decoder",
-        "description": "Semester project: Python application using the NHTSA API, with caching, lookup history, and error handling."
+        "description": "Semester project: Python command-line client for the NHTSA API, with basic VIN input checks, JSON response parsing, and in-memory lookup history for the session."
       },
       {
         "@type": "CreativeWork",
         "name": "DNS Sinkhole",
-        "description": "Raspberry Pi home-network project using Pi-hole."
+        "description": "Home lab: Pi-hole configured on a Raspberry Pi for DNS filtering and visibility into query and blocking activity."
       },
       {
         "@type": "CreativeWork",
         "name": "Server Security Capstone",
         "url": "https://sammiller.netlify.app/assets/4220_Vulnerability_Assessment_smill257_v8.pdf",
-        "description": "Cybersecurity bachelor's capstone using Greenbone to assess server vulnerabilities and explore how scan results can guide hardening recommendations."
+        "description": "Bachelor's capstone using Nmap and Greenbone to discover exposed services and assess a lab server, with researched findings, hardening recommendations, an executive summary, and scan evidence."
       },
       {
         "@type": "CreativeWork",
         "name": "Incident Response Plan Capstone",
         "url": "https://sammiller.netlify.app/assets/cyber-defense-capstone-public.pdf",
-        "description": "Semester-long academic team capstone led by Sam Miller as Operations Watch Commander / Incident Response Manager. The plan was revised after a Phase 4A rehearsal and team review, and prepared for a later tabletop exercise."
+        "description": "Semester-long academic team capstone led by Sam Miller to develop an incident response plan for a fictional organization, coordinating early response leadership and communications. The plan organizes playbooks, severity levels, communications, and responsibilities, with revisions after a rehearsal and team review."
       }
     ]
   }
