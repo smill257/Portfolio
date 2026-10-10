@@ -93,8 +93,10 @@ h1 { margin: 0 0 13px; font-size: clamp(3.7rem, 7vw, 6.5rem); font-weight: 760; 
 .private-note-mark { width: 7px; height: 7px; flex: 0 0 7px; border: 1px solid var(--red); transform: rotate(45deg); }
 
 .tool-section { padding-block: 43px 46px; border-block: 1px solid var(--line); background: #1a191c; }
-.tool-section .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
-.tool-section .section-heading > p:last-child:not(.eyebrow) { margin: 0; }
+.tool-section .section-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "eyebrow hint" "title hint"; align-items: end; column-gap: 20px; }
+.tool-section .section-heading .eyebrow { grid-area: eyebrow; }
+.tool-section .section-heading h2 { grid-area: title; }
+.tool-section .section-heading > p:last-child:not(.eyebrow) { grid-area: hint; align-self: end; max-width: 250px; margin: 0; padding-bottom: 4px; text-align: right; }
 .tool-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; list-style: none; padding: 0; margin: 0; }
 .tool-grid li { min-width: 0; flex: 0 0 calc((100% - 36px) / 5); }
 .tool-button { position: relative; width: 100%; min-height: 112px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px 7px 15px; border: 1px solid #454045; background: #1c1b1e; color: var(--text); cursor: pointer; transition: border-color .17s ease, background .17s ease, transform .17s ease; }
