@@ -60,7 +60,7 @@
       {
         "@type": "CreativeWork",
         "name": "Server Security Capstone",
-        "url": "https://sammiller.netlify.app/assets/4220_Vulnerability_Assessment_smill257_v8.pdf",
+        "url": "https://sammiller.netlify.app/assets/server-security-assessment-public.pdf",
         "description": "Bachelor's capstone using Nmap and Greenbone to discover exposed services and assess a lab server, with researched findings, hardening recommendations, an executive summary, and scan evidence."
       },
       {
