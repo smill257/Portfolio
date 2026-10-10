@@ -1,8 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="D20 die favicon">
 <rect width="64" height="64" rx="14" fill="#151517"/>
-<g fill="none" stroke="#f07c70" stroke-width="2.2" stroke-linejoin="round">
-<path d="M32 6 56 20v24L32 58 8 44V20Z"/>
-<path d="M32 6v17L8 20m24-14 24 14-24 3M8 20l14 17L8 44m48-24L42 37l14 7M22 37l10-14 10 14-10 10-10-10Zm0 0 10 10 10-10M22 37 8 44m34-7 14 7M32 47v11"/>
-</g>
-<text x="32" y="41" text-anchor="middle" fill="#f3eee8" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="800" letter-spacing="-1">20</text>
+<path d="M32 5 55 18.5v27L32 59 9 45.5v-27Z" fill="#1c1b1e" stroke="#f07c70" stroke-width="3" stroke-linejoin="round"/>
+<path d="M32 5v9m23 4.5-9 13.5M9 18.5 18 32m37 13-12-7M9 45.5l14-7" fill="none" stroke="#b86d66" stroke-width="1.5" stroke-linecap="round"/>
+<text x="32" y="39" text-anchor="middle" fill="#f3eee8" font-family="Georgia,Times New Roman,serif" font-size="21" font-weight="700" letter-spacing="-1">20</text>
 </svg>
