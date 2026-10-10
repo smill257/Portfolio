@@ -1,0 +1,65 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "https://sammiller.netlify.app/",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Sam Miller",
+    "jobTitle": "Application Security Analyst",
+    "homeLocation": {
+      "@type": "Place",
+      "name": "Atlanta, Georgia"
+    },
+    "description": "Application Security Analyst in Atlanta. I write Python, work with GraphQL and REST APIs, organize security data, automate AppSec workflows, interpret security findings, and partner with developers on remediation. I earned a B.B.A. in Information Security & Assurance from Kennesaw State University, graduating Magna Cum Laude, and took part in the USG Goes Global (USGG) study abroad experience in London in June and July 2024.",
+    "sameAs": [
+      "https://github.com/smill257",
+      "https://www.linkedin.com/in/booleanmethods/"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Kennesaw State University"
+    },
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Bachelor of Business Administration",
+      "name": "B.B.A. in Information Security & Assurance, Magna Cum Laude",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "Kennesaw State University"
+      },
+      "url": "https://www.parchment.com/lp/award/39bc6d3f-73ac-4e2e-8954-86c18e201100"
+    },
+    "award": "Magna Cum Laude",
+    "knowsAbout": [
+      "Python",
+      "GraphQL",
+      "REST APIs",
+      "Application security",
+      "SAST",
+      "Dependency scanning",
+      "PostgreSQL",
+      "Security automation",
+      "Vulnerability assessment",
+      "Server hardening"
+    ],
+    "subjectOf": [
+      {
+        "@type": "CreativeWork",
+        "name": "Smart VIN Decoder",
+        "url": "https://github.com/ksu-is/Smart-VIN-Decoder",
+        "description": "Semester project: Python application using the NHTSA API, with caching, lookup history, and error handling."
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "DNS Sinkhole",
+        "description": "Raspberry Pi home-network project using Pi-hole."
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Server Security Capstone",
+        "url": "https://github.com/smill257/Portfolio/blob/main/4220_Vulnerability_Assessment_smill257_v8.pdf",
+        "description": "Cybersecurity bachelor's capstone exploring vulnerability assessment and server hardening."
+      }
+    ]
+  }
+}

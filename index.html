@@ -1,311 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sam Miller | Cybersecurity & InfoSec</title>
-
-<style>
-:root{
-  --container:1100px;
-  --sidebar-w:280px;
-  --brand:#6a1b9a;
-}
-/* Header with banner + overlay (single rule) */
-header{
-  position: relative;
-  padding: 6rem 2rem;
-  text-align: center;
-  color:#fff;
-  /* overlay + image in one line */
-  background:
-    linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
-    url('https://raw.githubusercontent.com/smill257/Portfolio/main/harrison-broadbent-i5z1tvRMrnE-unsplash.jpg')
-    center/cover no-repeat;
-  z-index: 1000;
-}
-.header-content {
-  display: inline-block;
-  background: rgba(0,0,0,0.55); /* translucent black background */
-  padding: 1rem 2rem;
-  border-radius: 8px;
-}
-
-/* Base */
-*{box-sizing:border-box}
-body{margin:0;font-family:Roboto,system-ui,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.6;background:#f9f9f9;color:#2c2c2c}
-nav{position:sticky;top:0;z-index:10;background:#eee;text-align:center;padding:1rem 0}
-nav a{color:#333;margin:0 1.5rem;text-decoration:none;font-weight:700}
-nav a:hover{color:#ab47bc;text-decoration:underline}
-section{max-width:var(--container);margin:2rem auto;padding:2rem;background:#fff;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
-h1,h2,h3{margin:0 0 .6rem}
-h2{font-size:2rem;color:var(--brand);border-bottom:2px solid #e6e6e6;padding-bottom:.5rem;margin-bottom:1.25rem}
-
-/* Projects */
-.filterbar{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
-.filterbar button{border:1px solid #ccc;background:#faf7fc;color:var(--brand);border-radius:999px;padding:.35rem .7rem;font-size:.9rem;cursor:pointer}
-.filterbar button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
-
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
-.card{border:1px solid #ececec;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.04);overflow:hidden;background:#fff;display:flex;flex-direction:column}
-.card img{width:100%;height:180px;object-fit:cover;display:block}
-.card-body{padding:1rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
-.card h3{color:var(--brand);font-size:1.1rem;margin:0}
-.card p{margin:0;color:#333}
-.chips{display:flex;flex-wrap:wrap;gap:.4rem}
-.chips span{font-size:.8rem;background:#f3e5f5;color:var(--brand);padding:.25rem .5rem;border-radius:999px;border:1px solid #e1bee7}
-.meta{font-size:.85rem;color:#666}
-
-.actions {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: .6rem;
-}
-
-.actions a {
-  display: flex;              /* makes text center properly */
-  justify-content: center;
-  align-items: center;
-  padding: .55rem .9rem;
-  background: var(--brand);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  min-width: 0;               /* fixes overflow inside grid */
-}
-
-.actions a{background:var(--brand);color:#fff;text-decoration:none;border-radius:8px;font-weight:600}
-.actions a:hover{ background:#f3e5f5; color:var(--brand); }
-
-/* Experience */
-.experience{background:#fafafa;border-radius:10px;padding:1rem;margin-bottom:1rem;border:1px solid #eee}
-
-/* Footer */
-footer{text-align:center;color:#666;background:#f5f5f5;padding:1.25rem;margin-top:2rem}
-
-/* Contact Sidebar (slide-in) */
-.contact-toggle{
-  position:fixed;left:16px;bottom:20px;z-index:1001;border:1px solid var(--brand);
-  color:var(--brand);background:#fff;border-radius:999px;padding:.55rem .9rem;cursor:pointer;font-weight:700
-}
-.contact-toggle:focus{outline:2px solid var(--brand)}
-
-.contact-sidebar{
-  position:fixed;left:0;top:0;width:var(--sidebar-w);height:100dvh;background:#fff;z-index:1002;
-  border-right:1px solid #ddd;box-shadow:2px 0 16px rgba(0,0,0,.08);
-  transform:translateX(-100%);transition:transform .25s ease;display:flex;flex-direction:column
-}
-.contact-sidebar.open{transform:translateX(0)}
-.contact-body{flex:1;overflow:auto;padding:1rem 1rem .5rem}
-.contact-sidebar h3{color:var(--brand);margin:.25rem 0 .75rem}
-.contact-sidebar a{display:block;padding:.5rem;border-radius:8px;color:var(--brand);text-decoration:none}
-.contact-sidebar a:hover{background:#f6eefb}
-.contact-footer{position:sticky;bottom:0;background:#fff;border-top:1px solid #eee;padding:.75rem}
-.close-btn{width:100%;background:#fff;border:1px solid var(--brand);color:var(--brand);border-radius:8px;padding:.55rem .9rem;font-weight:600}
-.close-btn:hover{background:var(--brand);color:#fff}
-.close-btn:focus{outline:2px solid var(--brand)}
-.contact-overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:1000}
-.contact-overlay.show{opacity:1;pointer-events:auto}
-</style>
-
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sam Miller is an Atlanta-based Application Security Analyst who writes Python, connects security APIs, automates workflows, and works with developers on remediation.">
+<meta name="author" content="Sam Miller">
+<link rel="canonical" href="https://sammiller.netlify.app/">
+<link rel="alternate" type="application/json" href="profile.json" title="Sam Miller profile data">
+<meta name="theme-color" content="#151517">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Sam Miller | Application Security</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
 </head>
-<body>
-
-<!-- Contact Sidebar -->
-<button id="contactOpen" class="contact-toggle" type="button" aria-controls="contactSidebar" aria-expanded="false">Contact</button>
-<div id="contactOverlay" class="contact-overlay"></div>
-
-<aside id="contactSidebar" class="contact-sidebar" role="dialog" aria-modal="true" aria-labelledby="contactTitle" tabindex="-1">
-  <div class="contact-body">
-    <h3 id="contactTitle">Contact Me</h3>
-    <a href="mailto:SJ.Miller2k@gmail.com">📧 Email</a>
-    <a href="https://www.linkedin.com/in/booleanmethods/" target="_blank" rel="noopener">🔗 LinkedIn</a>
-    <a href="https://github.com/smill257" target="_blank" rel="noopener">💻 GitHub</a>
-    <a href="https://github.com/smill257/Portfolio/blob/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" rel="noopener">📄 Resume</a>
-  </div>
-  <div class="contact-footer">
-    <button id="contactClose" class="close-btn" type="button">Close</button>
-  </div>
-</aside>
-
-<header>
-  <div class="header-content">
-    <h1>Sam Miller</h1>
-    <p>Information Security & Assurance Graduate (Fall 2025) | BBA - ISA, Kennesaw State University</p>
-  </div>
+<body itemscope itemtype="https://schema.org/ProfilePage">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header wrap">
+  <a class="wordmark" href="#" aria-label="Sam Miller, home">sam miller<span>.</span></a>
+  <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#toolkit">Toolkit</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
 </header>
-
-
-<nav>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#experience">Experience</a>
-</nav>
-
-<section id="about">
-  <h2>About Me</h2>
-  <p>Information Security & Assurance Graduate at KSU focusing on network security, ethical hacking, risk management, and compliance. 
-    Honors GPA; President’s and Dean’s List.</p>
-  <p><strong>Certifications:</strong> Python Bootcamp (Udemy), Cybersecurity (Cisco Networking Academy), Intro to Cloud Security (Simplilearn), Precinct Certified User (WitFoo)</p>
-  <p><strong>Skills:</strong> Python, Java, C++, HTML, SQL, Power BI, Tableau, Excel, Wireshark, Linux, AWS, Azure, Risk Assessment, Public Speaking, Leadership</p>
+<main id="main" tabindex="-1" itemprop="mainEntity" itemscope itemtype="https://schema.org/Person">
+<meta itemprop="name" content="Sam Miller"><meta itemprop="jobTitle" content="Application Security Analyst">
+<link itemprop="url" href="https://sammiller.netlify.app/"><link itemprop="sameAs" href="https://github.com/smill257"><link itemprop="sameAs" href="https://www.linkedin.com/in/booleanmethods/">
+<section class="hero wrap" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow">APPSEC <span aria-hidden="true">/</span> ATLANTA, GA</p>
+    <h1 id="hero-title">Sam Miller<span class="period">.</span></h1>
+    <p class="hero-role">Application Security Analyst <span aria-hidden="true">·</span> Python &amp; Automation</p>
+    <p class="hero-description">I write Python, investigate security findings, and help developers get to the fix.</p>
+    <p class="hero-support">I connect APIs, organize security data, and automate repeatable workflows so teams can act.</p>
+    <div class="hero-actions"><a class="button button-primary" href="#work">See My Work</a><a class="button button-secondary" href="https://github.com/smill257/Portfolio/blob/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" rel="noopener noreferrer">Résumé <span class="sr-only">(opens in a new tab)</span></a></div>
+  </div>
+  <div class="workflow" role="group" aria-labelledby="workflow-title">
+    <div class="workflow-heading"><p class="eyebrow">CODE TO DEVELOPER ACTION</p><h2 id="workflow-title">How the pieces fit</h2></div>
+    <ol class="workflow-list">
+      <li><a class="workflow-step" href="#toolkit" data-tool-link="python"><span class="workflow-index">01</span><span class="workflow-copy"><strong>Connect</strong><small>Python <span aria-hidden="true">·</span> GraphQL <span aria-hidden="true">·</span> REST</small></span><span class="workflow-link" aria-hidden="true"></span></a></li>
+      <li><a class="workflow-step" href="#reporting"><span class="workflow-index">02</span><span class="workflow-copy"><strong>Organize security data</strong><small>Repository <span aria-hidden="true">·</span> pipeline <span aria-hidden="true">·</span> finding data</small></span><span class="workflow-link" aria-hidden="true"></span></a></li>
+      <li><a class="workflow-step" href="#scanning"><span class="workflow-index">03</span><span class="workflow-copy"><strong>Move work forward</strong><small>Developer context <span aria-hidden="true">·</span> remediation</small></span><span class="workflow-link" aria-hidden="true"></span></a></li>
+    </ol>
+    <p class="workflow-caption">Security work is more useful when it fits the way people build.</p>
+  </div>
 </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="filterbar" id="filters">
-    <button type="button" data-tag="all" class="active">All</button>
-    <button type="button" data-tag="python">Python</button>
-    <button type="button" data-tag="Server Hardening">Vulnerability Assessment</button>
-    <button type="button" data-tag="cloud">AWS</button>
-    <button type="button" data-tag="java">Java</button>
-    <button type="button" data-tag="homelab">Homelab</button>
+<section id="work" class="section work-section wrap" aria-labelledby="work-title">
+  <header class="section-heading"><p class="eyebrow">01 / THE DAY JOB</p><h2 id="work-title">AppSec in practice</h2></header>
+  <div class="employment">
+    <div class="employer-lockup"><p class="employer-name">Macy&rsquo;s Technology</p><p class="employer-role">Application Security Analyst</p></div>
+    <p class="employment-dates"><time datetime="2026-01">January 2026</time> <span aria-hidden="true">—</span> Present <span class="employment-divider" aria-hidden="true">/</span> Contract</p>
   </div>
- <div class="projects-grid" id="grid">
-     </article>
-        <!-- Server Hardening Research and Presentations. -->
-      <article class="card" data-tags="Server Hardening">
-      <img src="https://github.com/smill257/Portfolio/raw/main/thumbnail for vulnerability assessment.png" alt="Vulnerability Assessment" loading="lazy">
-      <div class="card-body">
-        <h3>Server Security Research and Presentations</h3>
-        <p>Portfolio of presentations completed for ISA 4220.</p>
-        <div class="chips"><span>Server Hardening</span><span>Vulnerability Assessment</span><span>Presentations</span><span>Greenbone Scan</span></div>
-        <div class="meta">Purpose: Library of server hardening recommendations and final project presentations for the Server Security course.</div>
-        <div class="actions">
-          <a href="https://www.youtube.com/@smill257" target="_blank" rel="noopener">YouTube Channel</a>
-          <a href="https://github.com/smill257/Portfolio/blob/main/4220_Vulnerability_Assessment_smill257_v8.pdf" target="_blank" rel="noopener">Research Paper</a>
-        </div>
-      </div>
-    </article>
-        <!-- Homelab card -->
-      <article class="card" data-tags="homelab">
-      <img src="https://github.com/smill257/Portfolio/raw/main/homelab.png" alt="DNS sinkhole" loading="lazy">
-      <div class="card-body">
-        <h3>DNS Sinkhole</h3>
-        <p>Protects all devices on the network from unwanted ads, trackers, malware.</p>
-        <div class="chips"><span>Homelab</span><span>RaspberryPi</span><span>DNS Sinkhole</span></div>
-        <div class="meta">Purpose: Built a DNS sinkhole with pihole to block and analyze malicious network traffic.</div>
-        <div class="actions">
-          <a href="https://github.com/smill257/Portfolio/raw/main/homelab.png" target="_blank" rel="noopener">Screenshot of DNS Sinkhole</a>
-        </div>
-      </div>
-    </article>
-    <!-- Vin Decoder Card -->
-    <article class="card" data-tags="python">
-      <img src="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%201.png" alt="VIN Decoder screenshot" loading="lazy">
-      <div class="card-body">
-        <h3>Smart VIN Decoder</h3>
-        <p>NHTSA API client with caching and error handling. History view and idempotent lookups.</p>
-        <div class="chips"><span>Python</span><span>API</span><span>Caching</span></div>
-        <div class="meta">Purpose: Improve vehicle data accessibility.</div>
-        <div class="actions">
-          <a href="https://github.com/ksu-is/Smart-VIN-Decoder/blob/main/vin_decoder.py" target="_blank" rel="noopener">Code</a>
-          <a href="https://github.com/smill257/Portfolio/raw/main/vin%20decoder%202.png" target="_blank" rel="noopener">VIN Output</a>
-          <a href="https://github.com/ksu-is/Smart-VIN-Decoder/blob/main/README.md" target="_blank" rel="noopener">Readme</a>
-        </div>
-      </div>
-    </article>
-        <!-- Cloud Sec. Card -->
-  <article class="card" data-tags="cloud security">
-    <img src="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" alt="AWS Architecture" loading="lazy">
-    <div class="card-body">
-      <h3>AWS Cloud Security Architecture</h3>
-      <p>Multi-AZ design with IAM least-privilege, S3 encryption, CloudWatch alerts, DR patterns.</p>
-      <div class="chips"><span>AWS</span><span>IAM</span><span>S3</span></div>
-      <div class="meta">Purpose: Secure cloud infrastructure.</div>
-      <div class="actions">
-        <a href="https://github.com/smill257/Portfolio/raw/main/two%20availability%20zone.png" target="_blank" rel="noopener">Diagram</a>
-      </div>
-    </div>
+  <div class="work-grid">
+    <article class="work-card" id="reporting"><div class="work-card-top"><span class="work-icon" aria-hidden="true">01</span><p class="eyebrow">PYTHON <span aria-hidden="true">·</span> GRAPHQL <span aria-hidden="true">·</span> REST</p></div><h3>Make security data useful</h3><p class="work-description">I use Python with GitLab and Snyk APIs to gather and organize repository, pipeline, and finding data into reports teams can use.</p><p class="work-reason"><span>WHY IT MATTERS</span>Clearer security data gives engineering teams a better place to start.</p></article>
+    <article class="work-card" id="exceptions"><div class="work-card-top"><span class="work-icon" aria-hidden="true">02</span><p class="eyebrow">PYTHON <span aria-hidden="true">·</span> POSTGRESQL</p></div><h3>Keep exceptions moving</h3><p class="work-description">I built a Python and PostgreSQL workflow to organize exception records, track due dates, and run scheduled checks on findings.</p><p class="work-reason"><span>WHY IT MATTERS</span>Approved exceptions get a follow-up instead of being forgotten.</p></article>
+    <article class="work-card" id="scanning"><div class="work-card-top"><span class="work-icon" aria-hidden="true">03</span><p class="eyebrow">SAST <span aria-hidden="true">·</span> SCA</p></div><h3>Untangle scan findings</h3><p class="work-description">I configure scanners, investigate false positives, and work with developers to understand findings and resolve issues.</p><p class="work-reason"><span>WHY IT MATTERS</span>Good triage helps turn a scan result into a fix developers can make.</p></article>
+    <article class="work-card" id="migration"><div class="work-card-top"><span class="work-icon" aria-hidden="true">04</span><p class="eyebrow">GITLAB <span aria-hidden="true">·</span> SNYK</p></div><h3>Help with the changeover</h3><p class="work-description">I supported the move from Snyk to GitLab with integration checks, reporting, automation, and walkthroughs for embedded engineers.</p><p class="work-reason"><span>WHY IT MATTERS</span>Walkthroughs and clear expectations helped teams get comfortable with the new tools.</p></article>
+  </div>
+  <p class="private-note"><span class="private-note-mark" aria-hidden="true"></span>No inside baseball: client code, findings, and internal artifacts stay private.</p>
+</section>
+
+<section id="toolkit" class="tool-section" aria-labelledby="toolkit-title"><div class="wrap">
+  <header class="section-heading"><p class="eyebrow">02 / THE TOOLKIT</p><h2 id="toolkit-title">Tools I reach for</h2><p>Choose one to see how it fits into my work.</p></header>
+  <ul class="tool-grid" aria-label="Select a tool for details">
+    <li><button type="button" disabled class="tool-button" data-tool="python" aria-controls="tool-detail" aria-pressed="true"><span class="icon-shell"><img src="assets/python.svg" alt="" width="36" height="36"></span><span class="tool-name">Python</span><small>Automation</small></button></li>
+    <li><button type="button" disabled class="tool-button" data-tool="graphql" aria-controls="tool-detail" aria-pressed="false"><span class="icon-shell"><img src="assets/graphql.svg" alt="" width="36" height="36"></span><span class="tool-name">GraphQL</span><small>APIs</small></button></li>
+    <li><button type="button" disabled class="tool-button" data-tool="gitlab" aria-controls="tool-detail" aria-pressed="false"><span class="icon-shell"><img src="assets/gitlab.svg" alt="" width="36" height="36"></span><span class="tool-name">GitLab</span><small>Scanning</small></button></li>
+    <li><button type="button" disabled class="tool-button" data-tool="snyk" aria-controls="tool-detail" aria-pressed="false"><span class="icon-shell"><img src="assets/snyk.svg" alt="" width="36" height="36"></span><span class="tool-name">Snyk</span><small>Security data</small></button></li>
+    <li><button type="button" disabled class="tool-button" data-tool="postgresql" aria-controls="tool-detail" aria-pressed="false"><span class="icon-shell"><img src="assets/postgresql.svg" alt="" width="36" height="36"></span><span class="tool-name">PostgreSQL</span><small>Exception tracking</small></button></li>
+    <li><button type="button" disabled class="tool-button" data-tool="elastic" aria-controls="tool-detail" aria-pressed="false"><span class="icon-shell"><img src="assets/elastic.svg" alt="" width="36" height="36"></span><span class="tool-name">Elastic Stack</span><small>ELK</small></button></li>
+    <li><button type="button" disabled class="tool-button" data-tool="googlecloud" aria-controls="tool-detail" aria-pressed="false"><span class="icon-shell"><img src="assets/googlecloud.svg" alt="" width="36" height="36"></span><span class="tool-name">Google Cloud</span><small>BigQuery</small></button></li>
+    <li><button type="button" disabled class="tool-button" data-tool="putty" aria-controls="tool-detail" aria-pressed="false"><span class="icon-shell"><img src="assets/putty.svg" alt="" width="36" height="36"></span><span class="tool-name">PuTTY</span><small>Remote access</small></button></li>
+    <li><button type="button" disabled class="tool-button" data-tool="postman" aria-controls="tool-detail" aria-pressed="false"><span class="icon-shell"><img src="assets/postman.svg" alt="" width="36" height="36"></span><span class="tool-name">Postman</span><small>API tooling</small></button></li>
+  </ul>
+  <div id="tool-detail" class="tool-detail" aria-live="polite" aria-atomic="true">
+    <div class="tool-current"><span class="detail-label">SELECTED TOOL</span><strong id="tool-name">Python</strong></div>
+    <div class="tool-notes"><div><span class="detail-label">USE CASE</span><p id="tool-use">API integrations, data processing, reporting, and automation.</p></div><div><span class="detail-label">WHERE IT SHOWS UP</span><p id="tool-description">Repository and pipeline inventory, security metrics, and repeatable AppSec workflows.</p></div></div>
+  </div>
+</div></section>
+
+<section id="projects" class="section projects-section wrap" aria-labelledby="projects-title">
+  <header class="section-heading"><p class="eyebrow">03 / CODE &amp; COURSEWORK</p><h2 id="projects-title">Things I&rsquo;ve made</h2><p>Small projects that show how I approach a problem.</p></header>
+  <article class="project-feature">
+    <figure class="project-visual">
+      <a class="project-image-link" href="assets/vin.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Smart VIN Decoder screenshot at full size"><img src="assets/vin.png" alt="Smart VIN Decoder menu with options to decode a VIN, view lookup history, or remove an entry" width="1799" height="1125"></a>
+      <figcaption><span>SEMESTER PROJECT</span><span>SMART VIN DECODER</span></figcaption>
+    </figure>
+    <div class="project-feature-copy"><p class="eyebrow">PYTHON <span aria-hidden="true">·</span> NHTSA API <span aria-hidden="true">·</span> SEMESTER PROJECT</p><h3>Smart VIN Decoder</h3><p>A semester project: a Python client for looking up vehicle details through the NHTSA API, with caching, lookup history, and error handling.</p><p class="project-why">A practical API project focused on making vehicle information easier to retrieve and keep track of.</p><ul class="project-tags" aria-label="Project technologies"><li>Python</li><li>API</li><li>Caching</li></ul><a class="text-link" href="https://github.com/ksu-is/Smart-VIN-Decoder" target="_blank" rel="noopener noreferrer">Explore the code <span class="arrow-mark" aria-hidden="true"></span><span class="sr-only">(opens in a new tab)</span></a></div>
   </article>
-        <!-- Cryptography Card -->
-    <article class="card" data-tags="python security">
-      <img src="https://github.com/smill257/Portfolio/raw/main/SHA256.svg.png" alt="CLI encryption tool" loading="lazy">
-      <div class="card-body">
-        <h3>Custom Encryption/Decryption Tool</h3>
-        <p>Hex decode, bitwise ops, SHA-256 hashing. Secure handling and testable modules.</p>
-        <div class="chips"><span>Python</span><span>Cryptography</span><span>CLI</span></div>
-        <div class="meta">Purpose: Enhance data security and integrity.</div>
-        <div class="actions">
-          <a href="https://github.com/smill257/Course-Projects/blob/main/Hash-Decrypter-Project.py" target="_blank" rel="noopener">Code</a>
-        </div>
-      </div>
+  <div class="project-grid">
+    <article class="project-card">
+      <figure class="project-visual project-visual-small"><a class="project-image-link" href="assets/homelab.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Pi-hole home network screenshot at full size"><img src="assets/homelab.png" alt="Pi-hole dashboard showing DNS query and blocking activity on my home network" width="1082" height="686" loading="lazy"></a><figcaption><span>HOME LAB</span><span>RASPBERRY PI</span></figcaption></figure>
+      <div class="project-body"><p class="eyebrow">RASPBERRY PI <span aria-hidden="true">·</span> PI-HOLE</p><h3>DNS Sinkhole</h3><p>A Raspberry Pi running Pi-hole to block ads, trackers, and unwanted domains across my home network.</p><a class="text-link" href="assets/homelab.png" target="_blank" rel="noopener noreferrer">View the dashboard <span class="arrow-mark" aria-hidden="true"></span><span class="sr-only">(opens in a new tab)</span></a></div>
     </article>
-    <!-- Java Card -->
-    <article class="card" data-tags="java">
-      <img src="https://github.com/smill257/Portfolio/raw/main/java%20icon.jpg" alt="Java mini apps graphic" loading="lazy">
-      <div class="card-body">
-        <h3>Java Mini-Apps</h3>
-        <p>Array sorter, calculator, Connect Four with tests.</p>
-        <div class="chips"><span>Java</span><span>OOP</span><span>JUnit</span></div>
-        <div class="meta">Purpose: Library of mini-apps demonstrating Java fundamentals.</div>
-        <div class="actions">
-          <a href="https://github.com/smill257/Course-Projects" target="_blank" rel="noopener">Repo</a>
-          <a href="https://github.com/smill257/Course-Projects/blob/main/Array%20Creator%20and%20Sorter.java" target="_blank" rel="noopener">Array Sorter</a>
-          <a href="https://github.com/smill257/Course-Projects/blob/main/Calculator.java" target="_blank" rel="noopener">Calculator</a>
-          <a href="https://github.com/smill257/Course-Projects/blob/main/Connect%20Four.java" target="_blank" rel="noopener">Connect Four</a>
-        </div>
-      </div>
+    <article class="project-card capstone-card">
+      <div class="capstone-art" role="img" aria-label="Bachelor's capstone about server security, vulnerability assessment, and hardening"><p class="capstone-art-label">BACHELOR&rsquo;S CAPSTONE</p><div class="capstone-art-title"><span>ASSESS</span><span>HARDEN</span><span>EXPLAIN</span></div><div class="capstone-art-rule" aria-hidden="true"></div><p class="capstone-art-note">SERVER SECURITY</p></div>
+      <div class="project-body"><p class="eyebrow">SECURITY RESEARCH <span aria-hidden="true">·</span> PRESENTATIONS</p><h3>Server Security</h3><p>My cybersecurity bachelor&rsquo;s capstone explored vulnerability assessment and server hardening through a paper and presentations.</p><div class="project-actions"><a class="text-link" href="https://github.com/smill257/Portfolio/blob/main/4220_Vulnerability_Assessment_smill257_v8.pdf" target="_blank" rel="noopener noreferrer">Read the paper <span class="arrow-mark" aria-hidden="true"></span><span class="sr-only">(opens in a new tab)</span></a><a class="text-link" href="https://www.youtube.com/@smill257" target="_blank" rel="noopener noreferrer">Watch talks <span class="arrow-mark" aria-hidden="true"></span><span class="sr-only">(opens in a new tab)</span></a></div></div>
     </article>
-
   </div>
 </section>
 
-<section id="experience">
-  <h2>Experience & Involvement</h2>
-  <div class="experience"><h3>Merit</h3><p>President’s List [5x] (4.00 GPA) and Dean’s List [3x] (3.80+ GPA).</p></div>
-  <div class="experience"><h3>Upsilon Pi Epsilon (UPE)</h3><p>Member of the international computing honor society.</p></div>
-  <div class="experience"><h3>Business Technology Association (BTA)</h3><p>Active member collaborating on emerging technologies.</p></div>
-  <div class="experience"><h3>Honor Society</h3><p>High academic standing and service-based leadership.</p></div>
+<section id="education" class="section education-section" aria-labelledby="education-title"><div class="wrap">
+  <header class="section-heading"><p class="eyebrow">04 / EDUCATION</p><h2 id="education-title">The foundation</h2></header>
+  <div class="education-layout">
+    <article class="degree-record">
+      <p class="degree-school">Kennesaw State University</p><p class="degree-college">Michael J. Coles College of Business</p>
+      <p class="degree-name">Bachelor of Business Administration</p>
+      <p class="degree-field">Information Security &amp; Assurance</p>
+      <div class="degree-honors"><span class="honors-mark" aria-hidden="true"></span><strong>Magna Cum Laude</strong><span class="degree-year">Aug 2022 – Dec 2025</span></div>
+      <a class="degree-link" href="https://www.parchment.com/lp/award/39bc6d3f-73ac-4e2e-8954-86c18e201100" target="_blank" rel="noopener noreferrer">View degree credential <span class="arrow-mark" aria-hidden="true"></span><span class="sr-only">(opens in a new tab)</span></a>
+
+      <div class="degree-involvement"><p class="detail-label">CAMPUS INVOLVEMENT</p><p>Upsilon Pi Epsilon <span aria-hidden="true">·</span> Business Technology Association</p></div>
+    </article>
+    <article class="study-abroad">
+      <div class="study-art" aria-hidden="true"><svg viewBox="0 0 380 180" fill="none"><path class="study-route" d="M34 137C84 137 82 48 139 48s54 91 103 91 52-56 104-56"/><circle class="study-stop" cx="34" cy="137" r="5"/><circle class="study-stop" cx="139" cy="48" r="5"/><circle class="study-stop" cx="242" cy="139" r="5"/><circle class="study-stop" cx="346" cy="83" r="5"/><path class="study-landmark" d="M293 111h35m-28 0V83h21v28m-16-28V70h11v13m-7-13V57h4v13m-13 54v-8m19 8v-8M51 124V92h16v32m-12-32V79h8v13m-4-13V67h1v12"/><path class="study-grid" d="M18 32h344M18 150h344"/></svg></div>
+      <div class="study-copy"><p class="detail-label">A STUDY ABROAD EXPERIENCE</p><h3>USG Goes Global (USGG) <span aria-hidden="true">·</span> London</h3><p class="study-date"><time datetime="2024-06">June 2024</time> – <time datetime="2024-07">July 2024</time></p><p>Studied cybersecurity through the lens of international business and globalization, with coursework, site visits, and cultural immersion.</p></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="off-clock wrap" aria-labelledby="off-clock-title">
+  <div class="off-clock-copy"><p class="eyebrow">OFF THE CLOCK</p><h2 id="off-clock-title">Gym, D&amp;D, and history rabbit holes.</h2><p>Usually lifting, rolling for initiative, or looking up the history of something I saw five minutes ago.</p></div>
+  <div class="d20-wrap"><button class="d20-roll" id="d20-roll" type="button" disabled aria-label="Roll the die; it always lands on 20."><svg class="d20" viewBox="0 0 100 100" aria-hidden="true"><path class="d20-outline" d="M50 5 89 27 89 72 50 95 11 72 11 27Z"/><path class="d20-facet" d="M50 5 50 32 11 27M50 5 89 27 50 32M11 27 31 52 11 72M89 27 69 52 89 72M11 72 50 68 50 95M89 72 50 68 50 95M31 52 50 32 69 52 50 68Z"/><text class="d20-number" id="d20-number" x="50" y="58" text-anchor="middle">20</text></svg></button><span class="sr-only" id="d20-result" aria-live="polite" aria-atomic="true"></span></div>
 </section>
 
-<footer>
-  <p>&copy; 2025 Sam Miller. All rights reserved.</p>
-</footer>
-
-<script>
-/* Projects filter */
-const grid=document.getElementById('grid');
-const btns=[...document.querySelectorAll('#filters button')];
-btns.forEach(b=>b.addEventListener('click',()=>{
-  btns.forEach(x=>x.classList.remove('active'));
-  b.classList.add('active');
-  const tag=b.dataset.tag;
-  [...grid.children].forEach(card=>{
-    card.style.display=(tag==='all'||card.dataset.tags.includes(tag))?'flex':'none';
-  });
-}));
-
-/* Contact sidebar */
-(function(){
-  const openBtn=document.getElementById('contactOpen');
-  const closeBtn=document.getElementById('contactClose');
-  const sidebar=document.getElementById('contactSidebar');
-  const overlay=document.getElementById('contactOverlay');
-  if(!openBtn||!closeBtn||!sidebar||!overlay) return;
-
-  function openPanel(){
-    sidebar.classList.add('open');
-    overlay.classList.add('show');
-    openBtn.setAttribute('aria-expanded','true');
-    sidebar.focus();
-    document.body.style.overflow='hidden';
-  }
-  function closePanel(){
-    sidebar.classList.remove('open');
-    overlay.classList.remove('show');
-    openBtn.setAttribute('aria-expanded','false');
-    openBtn.focus();
-    document.body.style.overflow='';
-  }
-  openBtn.addEventListener('click',openPanel);
-  closeBtn.addEventListener('click',closePanel);
-  overlay.addEventListener('click',closePanel);
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closePanel(); });
-})();
-</script>
-
+<section id="contact" class="contact-section wrap" aria-labelledby="contact-title">
+  <div><p class="eyebrow">05 / SAY HI</p><h2 id="contact-title">Let&rsquo;s connect<span>.</span></h2><a class="email-address" href="mailto:SJ.Miller2k@gmail.com">SJ.Miller2k@gmail.com</a></div>
+  <nav class="contact-links" aria-label="Contact and profiles"><a href="https://www.linkedin.com/in/booleanmethods/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="arrow-mark" aria-hidden="true"></span><span class="sr-only">(opens in a new tab)</span></a><a href="https://github.com/smill257" target="_blank" rel="noopener noreferrer">GitHub <span class="arrow-mark" aria-hidden="true"></span><span class="sr-only">(opens in a new tab)</span></a><a href="https://github.com/smill257/Portfolio/blob/main/2025%20Sam%20Miller%20Resume.pdf" target="_blank" rel="noopener noreferrer">Résumé <span class="arrow-mark" aria-hidden="true"></span><span class="sr-only">(opens in a new tab)</span></a></nav>
+</section>
+</main>
+<footer class="wrap"><span>Sam Miller <span aria-hidden="true">·</span> Atlanta, GA <span class="copyright">© <span id="year">2026</span></span></span><a href="#">Back to top</a></footer>
 </body>
 </html>
