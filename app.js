@@ -51,9 +51,15 @@ if(d20Button&&d20Number&&d20Result&&d20Connect){
   const duration=reducedMotion?660:1020;
   const tick=reducedMotion?130:58;
   d20Button.classList.add('is-rolling');
-  clickCount=(clickCount+1)%3;
-  d20Result.textContent=clickCount===0?'Secret door found.':'Always a nat 20 with my work.';
-  d20Connect.hidden=clickCount!==0;
+  clickCount=(clickCount+1)%4;
+  if(clickCount===0){
+   d20Result.textContent='Click me.';
+  }else if(clickCount===3){
+   d20Result.textContent='Secret door found.';
+  }else{
+   d20Result.textContent='Always a nat 20 with my work.';
+  }
+  d20Connect.hidden=clickCount!==3;
   numberTimer=setInterval(()=>{d20Number.textContent=String(1+Math.floor(Math.random()*20));},tick);
   rollTimer=setTimeout(()=>{
    clearInterval(numberTimer);
