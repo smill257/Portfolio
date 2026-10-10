@@ -39,8 +39,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid #ffd0c9; outline-offs
 h1 { margin: 0 0 13px; font-size: clamp(3.7rem, 7vw, 6.5rem); font-weight: 760; letter-spacing: -.085em; line-height: .98; }
 .hero-role { margin-bottom: 21px; color: var(--muted); font-size: .97rem; }
 .hero-role span { color: var(--red); padding-inline: 3px; }
-.hero-connect { display: inline-flex; align-items: center; min-height: 46px; padding-inline: 7px; color: var(--red); font-size: .9rem; font-weight: 650; text-decoration: underline; text-decoration-color: #8f514b; text-underline-offset: 4px; transition: color .18s ease, text-decoration-color .18s ease; }
-.hero-connect:hover { color: #ffaaa0; text-decoration-color: currentColor; }
 .hero-description { max-width: 475px; font-size: 1.2rem; line-height: 1.5; }
 .hero-support { max-width: 455px; margin-top: 12px; color: var(--muted); font-size: .96rem; line-height: 1.55; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; margin-top: 25px; }
@@ -319,6 +317,10 @@ footer a { min-height: 42px; display: flex; align-items: center; }
   .contact-section { grid-template-columns: 1fr; gap: 16px; padding-block: 36px; }
   .contact-section h2 { font-size: 1.65rem; }
   .contact-links { justify-content: flex-start; gap: 5px 18px; }
+}
+@media (max-width: 420px) {
+  .hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .hero-actions .button-primary { grid-column: 1 / -1; }
 }
 @media (max-width: 360px) {
   .wrap { width: calc(100% - 30px); }
