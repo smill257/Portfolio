@@ -167,8 +167,6 @@ h1 { margin: 0 0 13px; font-size: clamp(3.7rem, 7vw, 6.5rem); font-weight: 760; 
 .honors-mark { width: 9px; height: 9px; border: 1px solid var(--red); transform: rotate(45deg); }
 .degree-honors strong { font-size: .9rem; font-weight: 650; }
 .degree-year { margin-left: auto; color: var(--muted); font: .75rem var(--mono); }
-.degree-link { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; margin-top: 5px; color: #f2a098; font-size: .82rem; text-decoration: underline; text-decoration-color: #75504d; text-underline-offset: 3px; }
-.degree-link:hover { color: var(--text); }
 .degree-involvement { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin-top: 18px; padding-top: 10px; border-top: 1px solid var(--line); }
 .degree-involvement > p:last-child { color: #dfd8d2; font-size: .84rem; line-height: 1.45; }
 .academic-focus { margin-top: 20px; }
