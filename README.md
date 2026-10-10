@@ -21,7 +21,7 @@ The résumé, capstone PDFs, screenshots, and tool icons are kept in `assets/` a
 
 ## Content accuracy
 
-Professional summaries focus on AppSec automation, API integrations, security data organization, scanner triage, and developer support. Core AppSec tools are distinguished from broader tool familiarity. Academic projects and the home lab are identified as such.
+Professional summaries focus on AppSec automation, API integrations, security data organization, scanner triage, and developer support. Core AppSec tools are distinguished from broader tool familiarity. Academic projects and the home lab are identified as such. Projects appear before the interactive toolkit so visitors reach public evidence sooner. The VIN project is identified as a solo semester project, consistent with its project roadmap; the incident response project identifies Sam's team-lead contribution. The dashboard link identifies its screenshot destination, and the assessment presentation links directly to its video.
 
 The Smart VIN Decoder description reflects its public implementation: basic input checks, NHTSA API requests, JSON parsing, and session-only in-memory history. It does not claim persistent storage, full-response caching, or comprehensive network error handling.
 
