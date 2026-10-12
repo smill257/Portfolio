@@ -74,39 +74,39 @@
       },
       {
         "@type": "CreativeWork",
-        "name": "Security data pipelines",
+        "name": "Build useful security data pipelines",
         "genre": "Professional work summary",
-        "description": "I turn API data into organized security reports for engineering teams and leadership. Gives engineering and leadership a clearer view of the data they need to review."
+        "description": "I collect repository and finding data through APIs, organize it into consistent records, and build repeatable reporting workflows. Gives engineering and leadership a clearer view of the data they need to review."
       },
       {
         "@type": "CreativeWork",
-        "name": "Exception automation",
+        "name": "Keep exceptions connected to findings",
         "genre": "Professional work summary",
-        "description": "I built scheduled workflows to match approved exceptions to findings and revisit them when they expire. Keeps exception follow-up connected to the current state of a finding."
+        "description": "I built scheduled workflows to track approved exceptions, match them to findings, and revisit them when the approval expires. Keeps exception follow-up connected to the current state of a finding."
       },
       {
         "@type": "CreativeWork",
-        "name": "Report query tooling",
+        "name": "Make security reports easier to query",
         "genre": "Professional work summary",
-        "description": "I built Python tools to query reports, validate incoming files, and check upcoming exception dates. Makes recurring questions easier to answer without repeatedly downloading whole reports."
+        "description": "I built Python tools for looking up security-report data, checking incoming files, and reviewing upcoming exception dates. Makes recurring questions easier to answer without repeatedly downloading whole reports."
       },
       {
         "@type": "CreativeWork",
-        "name": "Scanner investigation",
+        "name": "Investigate findings and scanner behavior",
         "genre": "Professional work summary",
-        "description": "I investigate scanner behavior and false positives, then work with developers on remediation. Helps distinguish a code issue from a scan or policy issue before deciding what to do next."
+        "description": "I configure scanners, investigate false positives and unexpected finding-state changes, and work with developers on remediation. Helps distinguish a code issue from a scan or policy issue before deciding what to do next."
       },
       {
         "@type": "CreativeWork",
-        "name": "Dependency snapshots",
+        "name": "Organize dependency evidence",
         "genre": "Professional work summary",
-        "description": "I automate SBOM collection and organize dependency snapshots so they are easier to find and review. Keeps dependency information available beyond an individual pipeline run."
+        "description": "I built scheduled API workflows to collect CycloneDX software bills of materials and organize dependency snapshots for review. Keeps dependency information available beyond an individual pipeline run."
       },
       {
         "@type": "CreativeWork",
-        "name": "Security tool adoption",
+        "name": "Make security tools easier to adopt",
         "genre": "Professional work summary",
-        "description": "I supported the Snyk-to-GitLab transition with integration checks, automation, and engineer walkthroughs. Helps engineers understand the new tools and what changed in their workflow."
+        "description": "I supported the move from Snyk to GitLab with integration checks, reporting, automation, and walkthroughs for embedded engineers. Helps engineers understand the new tools and what changed in their workflow."
       }
     ]
   }

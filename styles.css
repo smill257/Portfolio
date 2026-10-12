@@ -80,16 +80,16 @@ h1 { margin: 0 0 13px; font-size: clamp(3.7rem, 7vw, 6.5rem); font-weight: 760; 
 .employment-dates > span:first-of-type { color: var(--red); padding-inline: 3px; }
 .employment-divider { color: var(--line-strong); padding-inline: 7px; }
 .work-grid { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--line); }
-.work-card { min-width: 0; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr); grid-template-areas: "heading description" "heading detail"; gap: 12px 52px; padding: 36px 0; border-bottom: 1px solid var(--line); }
+.work-card { min-width: 0; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr); grid-template-areas: "heading description" "heading reason" "heading detail"; gap: 8px 42px; padding: 27px 24px; border-bottom: 1px solid var(--line); background: var(--panel); }
 .work-heading { grid-area: heading; }
 .work-card-top { margin-bottom: 10px; display: flex; align-items: baseline; gap: 15px; }
 .work-card .eyebrow { color: var(--muted); }
 .work-icon { color: var(--red); font: .76rem var(--mono); }
 .work-card h3 { font-size: 1.26rem; letter-spacing: -.025em; max-width: 330px; }
 .work-description { grid-area: description; color: var(--text); font-size: 1rem; line-height: 1.6; }
-.work-detail .work-reason { margin-top: 12px; padding: 0; color: var(--muted); font-size: .94rem; line-height: 1.65; }
+.work-reason { grid-area: reason; color: var(--muted); font-size: .93rem; line-height: 1.55; }
 .work-detail { grid-area: detail; margin-top: 4px; }
-.work-detail summary { display: flex; align-items: center; justify-content: flex-start; gap: 12px; min-height: 44px; width: fit-content; list-style: none; padding: 9px 0; border-bottom: 1px solid var(--line-strong); color: var(--text); cursor: pointer; font-size: .88rem; font-weight: 600; transition: border-color .16s ease; }
+.work-detail summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; width: 100%; list-style: none; padding: 9px 12px; border: 1px solid var(--line-strong); color: var(--text); cursor: pointer; font-size: .88rem; font-weight: 600; transition: border-color .16s ease; }
 .work-detail summary::-webkit-details-marker { display: none; }
 .work-detail summary::after { content: ""; width: 7px; height: 7px; flex: 0 0 7px; border-right: 1.5px solid var(--red); border-bottom: 1.5px solid var(--red); transform: translateY(-2px) rotate(45deg); }
 .work-detail summary:hover { border-color: var(--red); }
@@ -282,7 +282,7 @@ footer a { min-height: 42px; display: flex; align-items: center; }
   .employer-role { font-size: .87rem; }
   .employment-dates { margin-top: 5px; font-size: .82rem; }
   .work-grid { gap: 0; }
-  .work-card { grid-template-columns: 1fr; grid-template-areas: "heading" "description" "detail"; gap: 12px; padding: 28px 0; }
+  .work-card { grid-template-columns: 1fr; grid-template-areas: "heading" "description" "reason" "detail"; gap: 10px; padding: 22px 18px; }
   .work-description { font-size: .97rem; }
   .work-card h3 { max-width: none; margin-bottom: 2px; }
   .private-note { align-items: flex-start; font-size: .85rem; line-height: 1.5; }
