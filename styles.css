@@ -19,7 +19,7 @@ h1, h2, h3, h4, p { margin: 0; }
 h1, h2, h3, h4 { line-height: 1.15; }
 .wrap { width: min(1080px, calc(100% - 56px)); margin-inline: auto; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-a:focus-visible, button:focus-visible { outline: 3px solid #ffd0c9; outline-offset: 4px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #ffd0c9; outline-offset: 4px; }
 ::selection { background: #843e37; color: white; }
 .skip { position: fixed; z-index: 10; top: -100px; left: 16px; padding: 12px 18px; background: var(--text); color: #171718; }
 .skip:focus { top: 15px; }
@@ -89,6 +89,10 @@ h1 { margin: 0 0 13px; font-size: clamp(3.7rem, 7vw, 6.5rem); font-weight: 760; 
 .work-description { margin-bottom: 18px; color: #dfd8d2; font-size: .98rem; line-height: 1.6; }
 .work-reason { margin-top: auto; padding-top: 12px; border-top: 1px solid #393338; color: #d1c9c3; font-size: .9rem; line-height: 1.5; }
 .work-reason span { display: block; margin-bottom: 3px; color: var(--red); font: .63rem/1.5 var(--mono); letter-spacing: .035em; }
+ .work-detail { margin-top: 14px; border-top: 1px solid var(--line); }
+.work-detail summary { min-height: 44px; padding-block: 10px; color: var(--text); cursor: pointer; font-size: .9rem; font-weight: 600; }
+.work-detail summary:hover, .work-detail[open] summary { color: var(--red); }
+.work-detail p { margin-top: 2px; color: var(--muted); font-size: .94rem; line-height: 1.6; }
 .private-note { display: flex; align-items: center; gap: 10px; margin-top: 17px; color: var(--muted); font-size: .88rem; }
 .private-note-mark { width: 7px; height: 7px; flex: 0 0 7px; border: 1px solid var(--red); transform: rotate(45deg); }
 

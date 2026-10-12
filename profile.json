@@ -10,7 +10,7 @@
       "@type": "Place",
       "name": "Atlanta, Georgia"
     },
-    "description": "Application Security Analyst based in Atlanta. I write Python, work with GraphQL and REST APIs, organize security data, automate AppSec workflows, interpret security findings, and partner with developers on remediation. I earned a B.B.A. in Information Security & Assurance from Kennesaw State University, graduating Magna Cum Laude, and took part in the USG Goes Global (USGG) study abroad experience in London in June and July 2024.",
+    "description": "Application Security Analyst based in Atlanta. I write Python, work with GraphQL and REST APIs, organize security data, build security data pipelines, automate exception follow-up and SBOM collection, interpret security findings, and partner with developers on remediation. I earned a B.B.A. in Information Security & Assurance from Kennesaw State University, graduating Magna Cum Laude, and took part in the USG Goes Global (USGG) study abroad experience in London in June and July 2024.",
     "sameAs": [
       "https://github.com/smill257",
       "https://www.linkedin.com/in/booleanmethods/"
@@ -42,7 +42,11 @@
       "Server hardening",
       "Security data organization",
       "Nmap",
-      "Greenbone"
+      "Greenbone",
+      "Google Cloud Storage",
+      "CycloneDX SBOMs",
+      "FastMCP",
+      "Security data pipelines"
     ],
     "subjectOf": [
       {
@@ -67,6 +71,42 @@
         "name": "Incident Response Plan Capstone",
         "url": "https://sammiller.netlify.app/assets/cyber-defense-capstone-public.pdf",
         "description": "Bachelor's capstone: a semester-long team project led by Sam Miller to develop an incident response plan for a fictional organization, coordinating early response leadership and communications. The plan organizes playbooks, severity levels, communications, and responsibilities, with revisions after a rehearsal and team review."
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Build useful security data pipelines",
+        "genre": "Professional work summary",
+        "description": "I collect repository and finding data through APIs, organize it into consistent records, and build repeatable reporting workflows. Gives engineering and leadership a clearer view of the data they need to review."
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Keep exceptions connected to findings",
+        "genre": "Professional work summary",
+        "description": "I built scheduled workflows to track approved exceptions, match them to findings, and revisit them when the approval expires. Keeps exception follow-up connected to the current state of a finding."
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Make security reports easier to query",
+        "genre": "Professional work summary",
+        "description": "I built Python tools for looking up security-report data, checking incoming files, and reviewing upcoming exception dates. Makes recurring questions easier to answer without repeatedly downloading whole reports."
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Investigate findings and scanner behavior",
+        "genre": "Professional work summary",
+        "description": "I configure scanners, investigate false positives and unexpected finding-state changes, and work with developers on remediation. Helps distinguish a code issue from a scan or policy issue before deciding what to do next."
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Organize dependency evidence",
+        "genre": "Professional work summary",
+        "description": "I built scheduled API workflows to collect CycloneDX software bills of materials and organize dependency snapshots for review. Keeps dependency information available beyond an individual pipeline run."
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Make security tools easier to adopt",
+        "genre": "Professional work summary",
+        "description": "I supported the move from Snyk to GitLab with integration checks, reporting, automation, and walkthroughs for embedded engineers. Helps engineers understand the new tools and what changed in their workflow."
       }
     ]
   }

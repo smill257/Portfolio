@@ -6,9 +6,9 @@ const toolNotes=Object.freeze({
  graphql:{name:'GraphQL',use:'My main API query language.',where:'Gathering repository, pipeline, scanner, and finding data for AppSec reporting.'},
  gitlab:{name:'GitLab',use:'Scanner setup, pipeline data, and security API workflows.',where:'Supporting the Snyk-to-GitLab change, security reporting, and developer-facing processes.'},
  snyk:{name:'Snyk',use:'API access to vulnerability and dependency data.',where:'AppSec reporting and analysis, including support for the Snyk-to-GitLab migration.'},
- postgresql:{name:'PostgreSQL',use:'Storing exception records and tracking due dates.',where:'The database behind my Python jobs for scheduled exception follow-up.'},
+ postgresql:{name:'PostgreSQL',use:'Organizing exception records, finding history, and security-report data.',where:'Python workflows for exception reconciliation, scheduled follow-up, and security reporting.'},
  elastic:{name:'Elastic Stack',use:'Familiarity with Elastic Stack (ELK).',where:'Part of the broader set of security tools I know.'},
- googlecloud:{name:'Google Cloud',use:'Writing SQL in BigQuery.',where:'My Google Cloud experience includes querying data with BigQuery.'},
+ googlecloud:{name:'Google Cloud',use:'Cloud storage for security reports and SBOM snapshots; SQL in BigQuery.',where:'Scheduled data collection, report-query tooling, and organized dependency evidence.'},
  putty:{name:'PuTTY',use:'Familiarity with a remote-access tool.',where:'Part of my broader systems and security toolkit.'},
  postman:{name:'Postman',use:'Familiarity with an API tool.',where:'Part of my API toolkit alongside GraphQL and REST.'}
 });
