@@ -79,20 +79,23 @@ h1 { margin: 0 0 13px; font-size: clamp(3.7rem, 7vw, 6.5rem); font-weight: 760; 
 .employment-dates { flex: 0 0 auto; color: var(--muted); font-size: .85rem; }
 .employment-dates > span:first-of-type { color: var(--red); padding-inline: 3px; }
 .employment-divider { color: var(--line-strong); padding-inline: 7px; }
-.work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 12px; }
-.work-card { min-width: 0; min-height: 250px; display: flex; flex-direction: column; padding: 23px 24px 21px; border: 1px solid #3b3438; background: var(--panel); transition: border-color .18s ease, transform .18s ease; }
-.work-card:hover { border-color: #a45f59; transform: translateY(-2px); }
-.work-card-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 11px; }
-.work-card .eyebrow { padding-right: 8px; }
-.work-icon { color: #cc8178; font: .71rem var(--mono); }
-.work-card h3 { margin-bottom: 8px; font-size: 1.18rem; letter-spacing: -.025em; }
-.work-description { margin-bottom: 18px; color: #dfd8d2; font-size: .98rem; line-height: 1.6; }
-.work-reason { margin-top: auto; padding-top: 12px; border-top: 1px solid #393338; color: #d1c9c3; font-size: .9rem; line-height: 1.5; }
-.work-reason span { display: block; margin-bottom: 3px; color: var(--red); font: .63rem/1.5 var(--mono); letter-spacing: .035em; }
-.work-detail { margin-top: 14px; border-top: 1px solid var(--line); }
-.work-detail summary { min-height: 44px; padding-block: 10px; color: var(--text); cursor: pointer; font-size: .9rem; font-weight: 600; }
-.work-detail summary:hover, .work-detail[open] summary { color: var(--red); }
-.work-detail p { margin-top: 2px; color: var(--muted); font-size: .94rem; line-height: 1.6; }
+.work-grid { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--line); }
+.work-card { min-width: 0; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr); grid-template-areas: "heading description" "heading reason" "heading detail"; gap: 8px 42px; padding: 27px 24px; border-bottom: 1px solid var(--line); background: var(--panel); }
+.work-heading { grid-area: heading; }
+.work-card-top { margin-bottom: 10px; display: flex; align-items: baseline; gap: 15px; }
+.work-card .eyebrow { color: var(--muted); }
+.work-icon { color: var(--red); font: .76rem var(--mono); }
+.work-card h3 { font-size: 1.26rem; letter-spacing: -.025em; max-width: 330px; }
+.work-description { grid-area: description; color: var(--text); font-size: 1rem; line-height: 1.6; }
+.work-reason { grid-area: reason; color: var(--muted); font-size: .93rem; line-height: 1.55; }
+.work-detail { grid-area: detail; margin-top: 4px; }
+.work-detail summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; width: 100%; list-style: none; padding: 9px 12px; border: 1px solid var(--line-strong); color: var(--text); cursor: pointer; font-size: .88rem; font-weight: 600; transition: border-color .16s ease; }
+.work-detail summary::-webkit-details-marker { display: none; }
+.work-detail summary::after { content: ""; width: 7px; height: 7px; flex: 0 0 7px; border-right: 1.5px solid var(--red); border-bottom: 1.5px solid var(--red); transform: translateY(-2px) rotate(45deg); }
+.work-detail summary:hover { border-color: var(--red); }
+.work-detail[open] summary { border-color: var(--red); }
+.work-detail[open] summary::after { transform: translateY(2px) rotate(225deg); }
+.work-detail p { padding: 14px 0 4px; color: var(--muted); font-size: .96rem; line-height: 1.65; }
 .private-note { display: flex; align-items: center; gap: 10px; margin-top: 17px; color: var(--muted); font-size: .88rem; }
 .private-note-mark { width: 7px; height: 7px; flex: 0 0 7px; border: 1px solid var(--red); transform: rotate(45deg); }
 
@@ -278,10 +281,10 @@ footer a { min-height: 42px; display: flex; align-items: center; }
   .employer-name { font-size: 1rem; }
   .employer-role { font-size: .87rem; }
   .employment-dates { margin-top: 5px; font-size: .82rem; }
-  .work-grid { grid-template-columns: 1fr; gap: 9px; }
-  .work-card { min-height: 0; padding: 18px; }
-  .work-description { font-size: .97rem; margin-bottom: 14px; }
-  .work-reason { margin-top: auto; }
+  .work-grid { gap: 0; }
+  .work-card { grid-template-columns: 1fr; grid-template-areas: "heading" "description" "reason" "detail"; gap: 10px; padding: 22px 18px; }
+  .work-description { font-size: .97rem; }
+  .work-card h3 { max-width: none; margin-bottom: 2px; }
   .private-note { align-items: flex-start; font-size: .85rem; line-height: 1.5; }
   .private-note-mark { margin-top: 6px; }
   .tool-section { padding-block: 44px 48px; }
